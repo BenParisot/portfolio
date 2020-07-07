@@ -1,8 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-
+import Nav from "./nav"
 import { rhythm, scale } from "../utils/typography"
+import BackgroundBars from "./backgroundBars"
 
 class Layout extends React.Component {
   render() {
@@ -55,14 +56,17 @@ class Layout extends React.Component {
     }
     return (
       <Wrapper>
+        <BackgroundBars />
         <div
           style={{
+            gridColumnStart: "3",
             marginLeft: `auto`,
             marginRight: `auto`,
-            maxWidth: rhythm(24),
+            // maxWidth: rhythm(24),
             padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           }}
         >
+          <Nav />
           <header>{header}</header>
           <main>{children}</main>
         </div>
@@ -77,7 +81,10 @@ class Layout extends React.Component {
 }
 
 const Wrapper = styled.div`
-  min-height: 100vh;
+  display: "grid";
+  grid-template-columns: "auto auto auto auto auto auto";
+  width: "100vw";
+  height: "120vh";
 `
 
 const Footer = styled.footer`

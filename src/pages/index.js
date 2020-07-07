@@ -4,10 +4,11 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/button"
+import BackgroundBars from '../components/backgroundBars'
 
 class IndexPage extends React.Component {
   render() {
-    const siteTitle = "Gatsby Starter Personal Website"
+    const siteTitle = "Ben Parisot Portfolio"
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
