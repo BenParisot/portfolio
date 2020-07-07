@@ -1,17 +1,31 @@
 import React from 'react'
 // import { Link } from 'gatsby'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 
 const Nav = () => {
   return (
-    <nav>
+    <NavMain>
       <p>Development</p>
       <p>Design</p>
       <p>Production</p>
       <p>Blog</p>
       <p>Contact</p>
-    </nav>
+    </NavMain>
   )
 }
+
+const NavMain = styled.nav` 
+  height: 42px;
+  width: 100vw;
+  display: flex;
+  background: linear-gradient(
+    to right,
+    #F04D4D 16.66%, #ED4B64 16.66%,
+    #ED4B64 33.33%, #F04D4D 33.33%,
+    #F04D4D 49.99%, #F26639 49.99%,
+    #F26639 66.66%, #ED4B64 66.66%,
+    #ED4B64 83.33%, #F04D4D 83.33%
+  );
+`
 
 export default Nav
