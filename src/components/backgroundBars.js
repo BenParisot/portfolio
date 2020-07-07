@@ -54,7 +54,15 @@ const BackgroundBars = () => {
       <Slogan>
         <h1>Ben can help you build that.</h1>
       </Slogan>
-      <Dev><h1>Developer</h1></Dev>
+      <Dev>
+        <h1>Developer</h1>
+      </Dev>
+      <Design>
+        <h1>Designer</h1>
+      </Design>
+      <Production>
+        <h1>Producer</h1>
+      </Production>
     </Background>
   )
 }
@@ -82,10 +90,40 @@ const Slogan = styled.div`
 const Dev = styled.div`
   grid-column-start: 1;
   grid-row-start: 6;
-  text-transform: uppercase;
-  color: #f0ea49;
   transform: rotate(180deg);
   h1 {
+    text-transform: uppercase;
+    color: #D6FFB7;
+    border-top: 10px solid #f0ea49;
+    padding-top: 20px;
+    font-size: 6rem;
+    writing-mode: vertical-rl;
+  }
+`
+
+const Design = styled.div`
+  grid-column-start: 2;
+  grid-row-start: 6;
+  transform: rotate(180deg);
+  h1 {
+    text-transform: uppercase;
+    color: #5BC0EB;
+    border-top: 10px solid #D6FFB7;
+    padding-top: 20px;
+    font-size: 6rem;
+    writing-mode: vertical-rl;
+  }
+`
+
+const Production = styled.div`
+  grid-column-start: 3;
+  grid-row-start: 6;
+  transform: rotate(180deg);
+  h1 {
+    text-transform: uppercase;
+    color: #D6FFB7;
+    border-top: 10px solid #f0ea49;
+    padding-top: 20px;
     font-size: 6rem;
     writing-mode: vertical-rl;
   }
