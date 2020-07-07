@@ -1,23 +1,22 @@
-import React from 'react'
-import styled from 'styled-components'
-import Nav from '../../components/nav'
-
+import React from "react"
+import styled from "styled-components"
+import Nav from "../../components/nav"
+import SectionTitle from "../../components/sectionTitle"
 const Developer = () => {
+  const title = `Ben Parisot, Full Stack Dev`
   return (
     <DeveloperMain>
       <Nav />
-      <h1>Developer section</h1>
+      <SectionTitle title={title} />
     </DeveloperMain>
   )
 }
 
-const DeveloperMain = styled.div` 
+const DeveloperMain = styled.div`
   width: 100vw;
   height: 100vh;
-  /* background-color: lightpink; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 16% 16% 16% 16% auto 16%;
+  grid-template-rows: 16% 16% auto 16% 16% 16%;
 `
 export default Developer
