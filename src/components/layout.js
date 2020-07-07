@@ -3,7 +3,11 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Nav from "./nav"
 import { rhythm, scale } from "../utils/typography"
-import Landing from "../pages/landing"
+import Landing from "../pages/landing/landing"
+import Contact from '../pages/landing/contact'
+import Producer from '../pages/landing/producer'
+import Designer from '../pages/landing/designer'
+import Developer from '../pages/landing/developer'
 
 class Layout extends React.Component {
   render() {
@@ -57,19 +61,10 @@ class Layout extends React.Component {
     return (
       <Wrapper>
         <Landing />
-        <div
-          style={{
-            gridColumnStart: "3",
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            // maxWidth: rhythm(24),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          }}
-        >
-          <Nav />
-          <header>{header}</header>
-          <main>{children}</main>
-        </div>
+        <Developer />
+        <Designer />
+        <Producer />
+        <Contact />
         <Footer>
           © {new Date().getFullYear()}, Built with
           {` `}
