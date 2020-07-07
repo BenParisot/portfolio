@@ -8,23 +8,25 @@ const CaseStudy = props => {
       <Title>
         <h4>{title}</h4>
       </Title>
-      <Description>
-        <p>{description}</p>
-      </Description>
       <Image>
         <img src={imgUrl} alt={title} />
       </Image>
-      <Link>Learn More</Link>
+      <Description>
+        <p>{description}</p>
+        <a>Learn More</a>
+      </Description>
     </CaseStudyContainer>
   )
 }
 
 const CaseStudyContainer = styled.div`
   display: grid;
-  grid-template-columns: 10% 40% 50%;
+  grid-template-columns: 10% 30% 5% 55%;
+  grid-template-rows: 10% 15% 10% 65%;
 `
 
 const Title = styled.div`
+  grid-column: 2 / span 5;
   display: flex;
   align-items: center;
   width: 50%;
@@ -37,13 +39,19 @@ const Title = styled.div`
   }
 `
 
-const Description = styled.div``
-
-const Image = styled.div`
-  width: 60%;
-  grid-column: 3;
+const Description = styled.div`
+  grid-column: 1 / span 3;
+  grid-row-start: 3;
+  a {
+    margin-left: 20%;
+    text-transform: uppercase;
+  }
 `
 
-const Link = styled.a``
+const Image = styled.div`
+  width: 100%;
+  grid-column: 4 / span 3;
+  z-index: -10;
+`
 
 export default CaseStudy

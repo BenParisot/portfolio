@@ -13,6 +13,18 @@ const Developer = () => {
         "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
       imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
     },
+    {
+      title: "Weather.",
+      description:
+        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
+      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
+    },
+    {
+      title: "Weather.",
+      description:
+        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
+      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
+    },
   ]
 
   const caseStudyList = caseStudies.map(caseStudy => {
@@ -46,8 +58,9 @@ const DeveloperMain = styled.div`
   width: 100vw;
   height: 100%;
   display: grid;
+  padding-bottom: 50px;
   grid-template-columns: 16% 16% 16% 16% auto 16%;
-  grid-template-rows: 12% 16% 10% 16% 16% 16%;
+  grid-template-rows: 125px 165px 85px 5% 16%;
 `
 
 const Description = styled.div`
@@ -59,6 +72,7 @@ const CaseStudies = styled.div`
   grid-row-start: 5;
   h3 {
     text-transform: uppercase;
+    margin-bottom: 35px;
   }
 `
 export default Developer
