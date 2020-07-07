@@ -63,13 +63,21 @@ const BackgroundBars = () => {
       <Production>
         <h1>Producer</h1>
       </Production>
+      <Nav>
+        <li>
+          <span>Blog</span>
+        </li>
+        <li>
+          <span>Contact</span>
+        </li>
+      </Nav>
     </Background>
   )
 }
 
 const Background = styled.div`
   display: grid;
-  grid-template-columns: 16% 16% 16% 16% 16% auto;
+  grid-template-columns: 16% 16% 16% 16% auto 16%;
   grid-template-rows: 16% 16% auto 16% 16% 16%;
   width: 100vw;
   height: 100vh;
@@ -93,7 +101,7 @@ const Dev = styled.div`
   transform: rotate(180deg);
   h1 {
     text-transform: uppercase;
-    color: #D6FFB7;
+    color: #d6ffb7;
     border-top: 10px solid #f0ea49;
     padding-top: 20px;
     font-size: 6rem;
@@ -107,8 +115,8 @@ const Design = styled.div`
   transform: rotate(180deg);
   h1 {
     text-transform: uppercase;
-    color: #5BC0EB;
-    border-top: 10px solid #D6FFB7;
+    color: #5bc0eb;
+    border-top: 10px solid #d6ffb7;
     padding-top: 20px;
     font-size: 6rem;
     writing-mode: vertical-rl;
@@ -121,11 +129,28 @@ const Production = styled.div`
   transform: rotate(180deg);
   h1 {
     text-transform: uppercase;
-    color: #D6FFB7;
+    color: #d6ffb7;
     border-top: 10px solid #f0ea49;
     padding-top: 20px;
     font-size: 6rem;
     writing-mode: vertical-rl;
+  }
+`
+
+const Nav = styled.ul`
+  grid-column-start: 6;
+  grid-row-start: 6;
+  align-items: center;
+  li {
+    font-size: 1.2rem;
+    list-style: none;
+    color: #d6ffb7;
+    font-style: italic;
+    span {
+      border-bottom: 5px solid white;
+      margin-bottom: 15px;
+      padding-bottom: 3px;
+    }
   }
 `
 export default BackgroundBars
