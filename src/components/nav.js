@@ -17,6 +17,7 @@ const Nav = () => {
 const NavMain = styled.nav` 
   height: 42px;
   width: 100vw;
+  grid-row-start: 1;
   display: flex;
   justify-content: flex-end;
   padding-right: 15px;
