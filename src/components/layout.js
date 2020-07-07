@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Nav from "./nav"
 import { rhythm, scale } from "../utils/typography"
-import BackgroundBars from "./backgroundBars"
+import Landing from "../pages/landing"
 
 class Layout extends React.Component {
   render() {
@@ -56,7 +56,7 @@ class Layout extends React.Component {
     }
     return (
       <Wrapper>
-        <BackgroundBars />
+        <Landing />
         <div
           style={{
             gridColumnStart: "3",

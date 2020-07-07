@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-const BackgroundBars = () => {
+const Landing = () => {
   return (
     <Background>
       <div
@@ -153,4 +153,4 @@ const Nav = styled.ul`
     }
   }
 `
-export default BackgroundBars
+export default Landing
