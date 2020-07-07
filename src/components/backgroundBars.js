@@ -90,7 +90,7 @@ const Slogan = styled.div`
   grid-row-start: 1;
   position: relative;
   h1 {
-    font-size: 3rem;
+    font-size: 3.5vw;
     font-style: italic;
   }
 `
@@ -104,7 +104,7 @@ const Dev = styled.div`
     color: #d6ffb7;
     border-top: 10px solid #f0ea49;
     padding-top: 20px;
-    font-size: 6rem;
+    font-size: 10vh;
     writing-mode: vertical-rl;
   }
 `
@@ -118,7 +118,7 @@ const Design = styled.div`
     color: #5bc0eb;
     border-top: 10px solid #d6ffb7;
     padding-top: 20px;
-    font-size: 6rem;
+    font-size: 10vh;
     writing-mode: vertical-rl;
   }
 `
@@ -132,7 +132,7 @@ const Production = styled.div`
     color: #d6ffb7;
     border-top: 10px solid #f0ea49;
     padding-top: 20px;
-    font-size: 6rem;
+    font-size: 10vh;
     writing-mode: vertical-rl;
   }
 `
@@ -142,7 +142,7 @@ const Nav = styled.ul`
   grid-row-start: 6;
   align-items: center;
   li {
-    font-size: 1.2rem;
+    font-size: 1.5vw;
     list-style: none;
     color: #d6ffb7;
     font-style: italic;
