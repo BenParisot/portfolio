@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-const SectionTitle = children => {
-  const { title } = children
+const SectionTitle = props => {
+  const { title } = props
   return (
     <>
       <TitleBackground />
