@@ -19,3 +19,5 @@ const PortfolioPieceContainer = styled.div`
 const Image = styled.div` 
   width: 100%;
 `
+
+export default Portfolio

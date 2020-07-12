@@ -1,29 +1,52 @@
 import React from 'react'
 import styled from 'styled-components'
 import SectionTitle from "../../components/sectionTitle"
+import PortfolioPiece from '../portfolio/portfolioPiece'
 
 const Designer = () => {
   const title = `Ben Parisot, Digital Designer`
-  const caseStudies = [
+  const portfolio = [
     {
       title: "Weather.",
-      description:
-        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
-      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
+      link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
+      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
     },
     {
       title: "Weather.",
-      description:
-        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
-      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
+      link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
+      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e03c8e97968771.5ed150001ec0a.jpg",
     },
     {
       title: "Weather.",
-      description:
-        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
-      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
+      link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
+      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/21b00197968771.5ed172c99c343.jpg",
+    },
+    {
+      title: "Weather.",
+      link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
+      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/27556d97968771.5ed150001f157.jpg",
+    },
+    {
+      title: "Weather.",
+      link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
+      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
+    },
+    {
+      title: "Weather.",
+      link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
+      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7cebd097968771.5ed150001f70d.jpg",
     },
   ]
+
+  const portfolioList = portfolio.map(portfolioPiece => {
+    return (
+      <PortfolioPiece
+        title={portfolioPiece.title}
+        imgUrl={portfolioPiece.imgUrl}
+        link={portfolioPiece.link}
+      />
+    )
+  })
   return (
     <DesignerMain>
       <SectionTitle title={title} />
@@ -32,6 +55,7 @@ const Designer = () => {
       </Description>
       <Portfolio>
         <h3>Portfolio Work:</h3>
+        {portfolioList}
       </Portfolio>
     </DesignerMain>
   )
