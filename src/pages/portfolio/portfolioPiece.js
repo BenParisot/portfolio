@@ -13,10 +13,12 @@ const PortfolioPiece = props => {
 }
 
 const PortfolioPieceContainer = styled.div` 
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
 `
 const Image = styled.div` 
+    a {
+      text-decoration: none;
+    }
   width: 100%;
 `
 

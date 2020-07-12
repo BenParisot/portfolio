@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import SectionTitle from "../../components/sectionTitle"
 import PortfolioPiece from '../portfolio/portfolioPiece'
+import Gallery from 'react-photo-gallery'
 
 const Designer = () => {
   const title = `Ben Parisot, Digital Designer`
@@ -9,44 +10,60 @@ const Designer = () => {
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
+      width: 1200,
+      height: 889,
+
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e03c8e97968771.5ed150001ec0a.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e03c8e97968771.5ed150001ec0a.jpg",
+      width: 1200,
+      height: 667,
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/21b00197968771.5ed172c99c343.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/21b00197968771.5ed172c99c343.jpg",
+      width: 1200,
+      height: 962,
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/27556d97968771.5ed150001f157.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/27556d97968771.5ed150001f157.jpg",
+      width: 1200,
+      height: 1600,
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
+      width: 1200,
+      height: 889,
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7cebd097968771.5ed150001f70d.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7cebd097968771.5ed150001f70d.jpg",
+      width: 1200,
+      height: 675,
     },
   ]
 
   const portfolioList = portfolio.map(portfolioPiece => {
     return (
-      <PortfolioPiece
-        title={portfolioPiece.title}
-        imgUrl={portfolioPiece.imgUrl}
-        link={portfolioPiece.link}
-      />
+      <li>
+        <PortfolioPiece
+          title={portfolioPiece.title}
+          imgUrl={portfolioPiece.imgUrl}
+          link={portfolioPiece.link}
+        />
+      </li>
     )
   })
+  const columns = 2
   return (
     <DesignerMain>
       <SectionTitle title={title} />
@@ -55,7 +72,8 @@ const Designer = () => {
       </Description>
       <Portfolio>
         <h3>Portfolio Work:</h3>
-        {portfolioList}
+        {/* <ul>{portfolioList}</ul> */}
+        <Gallery columns="2"photos={portfolio} direction="column" />
       </Portfolio>
     </DesignerMain>
   )
@@ -67,7 +85,7 @@ const DesignerMain = styled.div`
   display: grid;
   padding-bottom: 50px;
   grid-template-columns: 16% 16% 16% 16% auto 16%;
-  grid-template-rows: 125px 165px 85px 3%;
+  grid-template-rows: 125px 165px 85px 4%;
 `
 
 const Description = styled.div`
@@ -81,6 +99,15 @@ const Portfolio = styled.div`
   h3 {
     text-transform: uppercase;
     margin-bottom: 35px;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  li {
+    width: 45%;
+    list-style: none;
   }
 `
 
