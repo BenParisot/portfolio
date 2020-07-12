@@ -20,4 +20,4 @@ const Image = styled.div`
   width: 100%;
 `
 
-export default Portfolio
+export default PortfolioPiece
