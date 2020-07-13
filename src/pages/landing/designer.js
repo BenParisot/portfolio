@@ -50,6 +50,27 @@ const Designer = () => {
       width: 1200,
       height: 675,
     },
+    {
+      title: "Weather.",
+      link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/27556d97968771.5ed150001f157.jpg",
+      width: 1200,
+      height: 1600,
+    },
+    {
+      title: "Weather.",
+      link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
+      width: 1200,
+      height: 889,
+    },
+    {
+      title: "Weather.",
+      link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7cebd097968771.5ed150001f70d.jpg",
+      width: 1200,
+      height: 675,
+    },
   ]
 
   const portfolioList = portfolio.map(portfolioPiece => {
@@ -83,9 +104,9 @@ const DesignerMain = styled.div`
   width: 100vw;
   height: 100%;
   display: grid;
-  padding-bottom: 50px;
+  padding-bottom: 250px;
   grid-template-columns: 16% 16% 16% 16% auto 16%;
-  grid-template-rows: 125px 165px 85px 4%;
+  grid-template-rows: 125px 165px 85px 10%;
 `
 
 const Description = styled.div`

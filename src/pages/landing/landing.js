@@ -4,6 +4,7 @@ const Landing = () => {
   return (
     <Background>
       <div
+        id="top"
         style={{
           gridColumnStart: "1",
           gridRowStart: "1",
