@@ -1,21 +1,78 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
+import Nav from "../../components/nav"
+import SectionTitle from "../../components/sectionTitle"
+import CaseStudy from "../case-study/caseStudy"
 
-const Producer = () => {
+const Developer = () => {
+  const title = `Ben Parisot, Digital Producer`
+  const caseStudies = [
+    {
+      title: "Weather.",
+      description:
+        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
+      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
+    },
+    {
+      title: "Weather.",
+      description:
+        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
+      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
+    },
+    {
+      title: "Weather.",
+      description:
+        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
+      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
+    },
+  ]
+
+  const caseStudyList = caseStudies.map(caseStudy => {
+    return (
+      <CaseStudy
+        title={caseStudy.title}
+        description={caseStudy.description}
+        imgUrl={caseStudy.imgUrl}
+      />
+    )
+  })
+
   return (
     <ProducerMain>
-      <h1>Producer section</h1>
+      <Nav />
+      <SectionTitle title={title} />
+      <Description>
+        I’m a design-driven full stack engineer. I believe good design leads to
+        clear product requirements and better technical understanding. Let's
+        work together to build something elegant and useful.
+      </Description>
+      <CaseStudies>
+        <h3>Case Studies:</h3>
+        {caseStudyList}
+      </CaseStudies>
     </ProducerMain>
   )
 }
 
 const ProducerMain = styled.div`
   width: 100vw;
-  height: 100vh;
-  background-color: lightblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+  display: grid;
+  padding-bottom: 50px;
+  grid-template-columns: 16% 16% 16% 16% auto 16%;
+  grid-template-rows: 125px 165px 85px 5% 16%;
 `
 
-export default Producer
+const Description = styled.div`
+  grid-column: 3 / span 3;
+  grid-row-start: 4;
+`
+const CaseStudies = styled.div`
+  grid-column: 2 / span 4;
+  grid-row-start: 5;
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 35px;
+  }
+`
+export default Developer

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const PortfolioPiece = props => {
   const { imgUrl, link, title } = props
-  console.log('link', link)
+  console.log('props', props)
   return (
     <PortfolioPieceContainer>
       <Image>

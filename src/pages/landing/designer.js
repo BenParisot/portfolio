@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import SectionTitle from "../../components/sectionTitle"
-import PortfolioPiece from '../portfolio/portfolioPiece'
+// import PortfolioPiece from '../portfolio/portfolioPiece'
 import Gallery from 'react-photo-gallery'
 
 const Designer = () => {
@@ -73,17 +73,6 @@ const Designer = () => {
     },
   ]
 
-  const portfolioList = portfolio.map(portfolioPiece => {
-    return (
-      <li>
-        <PortfolioPiece
-          title={portfolioPiece.title}
-          imgUrl={portfolioPiece.imgUrl}
-          link={portfolioPiece.link}
-        />
-      </li>
-    )
-  })
   const columns = 2
   return (
     <DesignerMain>
@@ -94,7 +83,7 @@ const Designer = () => {
       <Portfolio>
         <h3>Portfolio Work:</h3>
         {/* <ul>{portfolioList}</ul> */}
-        <Gallery columns="2"photos={portfolio} direction="column" />
+        <Gallery margin="4" columns="2" photos={portfolio} direction="column" />
       </Portfolio>
     </DesignerMain>
   )
