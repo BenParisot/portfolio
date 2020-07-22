@@ -1,27 +1,33 @@
 import React from "react"
 import styled from "styled-components"
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa"
+import Nav from "../../components/nav"
+import Footer from "../../components/footer"
 
 const Contact = () => {
   return (
-    <ContactMain>
-      <ContactDescription>
-        <p>
-          I'm currently available for fulltime and contract positions. Give me a
-          call or drop me a line and let's chat.
-        </p>
-      </ContactDescription>
-      <ContactLinks>
-        <p>
-          <span className="email">Email:</span> me@benparisot.com
-        </p>
-        <div className="icons">
-          <FaTwitter size="48" color="#ed4b64"/>
-          <FaLinkedin size="48" color="#f04d4d" />
-          <FaGithub size="48" color="#F26639" />
-        </div>
-      </ContactLinks>
-    </ContactMain>
+    <>
+      <Nav />
+      <ContactMain>
+        <ContactDescription>
+          <p>
+            I'm currently available for fulltime and contract positions. Give me
+            a call or drop me a line and let's chat.
+          </p>
+        </ContactDescription>
+        <ContactLinks>
+          <p>
+            <span className="email">Email:</span> me@benparisot.com
+          </p>
+          <div className="icons">
+            <FaTwitter size="48" color="#ed4b64" />
+            <FaLinkedin size="48" color="#f04d4d" />
+            <FaGithub size="48" color="#F26639" />
+          </div>
+        </ContactLinks>
+      </ContactMain>
+      <Footer />
+    </>
   )
 }
 
@@ -29,9 +35,10 @@ const ContactMain = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
+  /* grid-template-columns: auto auto;
+  grid-template-rows: 45px auto; */
   justify-content: center;
   align-items: center;
-  margin: 4rem;
 `
 
 const ContactDescription = styled.div`

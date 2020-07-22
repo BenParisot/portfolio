@@ -1,8 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 import SectionTitle from "../../components/sectionTitle"
-// import PortfolioPiece from '../portfolio/portfolioPiece'
-import Gallery from 'react-photo-gallery'
+import Gallery from "react-photo-gallery"
+import Nav from "../../components/nav"
+import Footer from "../../components/footer"
 
 const Designer = () => {
   const title = `Ben Parisot, Digital Designer`
@@ -10,64 +11,72 @@ const Designer = () => {
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
+      src:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
       width: 1200,
       height: 889,
-
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e03c8e97968771.5ed150001ec0a.jpg",
+      src:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e03c8e97968771.5ed150001ec0a.jpg",
       width: 1200,
       height: 667,
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/21b00197968771.5ed172c99c343.jpg",
+      src:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/21b00197968771.5ed172c99c343.jpg",
       width: 1200,
       height: 962,
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/27556d97968771.5ed150001f157.jpg",
+      src:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/27556d97968771.5ed150001f157.jpg",
       width: 1200,
       height: 1600,
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
+      src:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
       width: 1200,
       height: 889,
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7cebd097968771.5ed150001f70d.jpg",
+      src:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7cebd097968771.5ed150001f70d.jpg",
       width: 1200,
       height: 675,
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/27556d97968771.5ed150001f157.jpg",
+      src:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/27556d97968771.5ed150001f157.jpg",
       width: 1200,
       height: 1600,
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
+      src:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9b7f697968771.5ed150001fccb.jpg",
       width: 1200,
       height: 889,
     },
     {
       title: "Weather.",
       link: "https://www.behance.net/gallery/97968771/Misc-Web-Design",
-      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7cebd097968771.5ed150001f70d.jpg",
+      src:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7cebd097968771.5ed150001f70d.jpg",
       width: 1200,
       height: 675,
     },
@@ -75,21 +84,33 @@ const Designer = () => {
 
   const columns = 2
   return (
-    <DesignerMain>
-      <SectionTitle title={title} />
-      <Description>
-      I’m an experienced UX/UI designer and digital illustrator with a passion for bright colors, clean layouts, and rich, dramatic photography. I also dabble in generative and interactive art using programs like TouchDesigner, Resolume, and MadMapper.
-      </Description>
-      <Portfolio>
-        <h3>Portfolio Work:</h3>
-        {/* <ul>{portfolioList}</ul> */}
-        <Gallery margin="4" columns="2" photos={portfolio} direction="column" />
-      </Portfolio>
-    </DesignerMain>
+    <>
+      <DesignerMain>
+        <Nav />
+        <SectionTitle title={title} />
+        <Description>
+          I’m an experienced UX/UI designer and digital illustrator with a
+          passion for bright colors, clean layouts, and rich, dramatic
+          photography. I also dabble in generative and interactive art using
+          programs like TouchDesigner, Resolume, and MadMapper.
+        </Description>
+        <Portfolio>
+          <h3>Portfolio Work:</h3>
+          {/* <ul>{portfolioList}</ul> */}
+          <Gallery
+            margin="4"
+            columns="2"
+            photos={portfolio}
+            direction="column"
+          />
+        </Portfolio>
+      </DesignerMain>
+      <Footer />
+    </>
   )
 }
 
-const DesignerMain = styled.div` 
+const DesignerMain = styled.div`
   width: 100vw;
   height: 100%;
   display: grid;
@@ -103,7 +124,7 @@ const Description = styled.div`
   grid-row-start: 4;
 `
 
-const Portfolio = styled.div` 
+const Portfolio = styled.div`
   grid-column: 2 / span 4;
   grid-row-start: 5;
   h3 {

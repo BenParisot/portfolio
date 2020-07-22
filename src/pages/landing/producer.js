@@ -3,8 +3,9 @@ import styled from "styled-components"
 import Nav from "../../components/nav"
 import SectionTitle from "../../components/sectionTitle"
 import CaseStudy from "../case-study/caseStudy"
+import Footer from '../../components/footer'
 
-const Developer = () => {
+const Producer = () => {
   const title = `Ben Parisot, Digital Producer`
   const caseStudies = [
     {
@@ -38,6 +39,7 @@ const Developer = () => {
   })
 
   return (
+    <>
     <ProducerMain>
       <Nav />
       <SectionTitle title={title} />
@@ -49,6 +51,8 @@ const Developer = () => {
         {caseStudyList}
       </CaseStudies>
     </ProducerMain>
+      <Footer />
+      </>
   )
 }
 
@@ -73,4 +77,4 @@ const CaseStudies = styled.div`
     margin-bottom: 35px;
   }
 `
-export default Developer
+export default Producer

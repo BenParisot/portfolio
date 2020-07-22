@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Nav from "../../components/nav"
 import SectionTitle from "../../components/sectionTitle"
 import CaseStudy from "../case-study/caseStudy"
+import Footer from "../../components/footer"
 
 const Developer = () => {
   const title = `Ben Parisot, Full Stack Dev`
@@ -38,19 +39,22 @@ const Developer = () => {
   })
 
   return (
-    <DeveloperMain>
-      <Nav />
-      <SectionTitle title={title} />
-      <Description>
-        I’m a design-driven full stack engineer. I believe good design leads to
-        clear product requirements and better technical understanding. Let's
-        work together to build something elegant and useful.
-      </Description>
-      <CaseStudies>
-        <h3>Case Studies:</h3>
-        {caseStudyList}
-      </CaseStudies>
-    </DeveloperMain>
+    <>
+      <DeveloperMain>
+        <Nav />
+        <SectionTitle title={title} />
+        <Description>
+          I’m a design-driven full stack engineer. I believe good design leads
+          to clear product requirements and better technical understanding.
+          Let's work together to build something elegant and useful.
+        </Description>
+        <CaseStudies>
+          <h3>Case Studies:</h3>
+          {caseStudyList}
+        </CaseStudies>
+      </DeveloperMain>
+      <Footer />
+    </>
   )
 }
 

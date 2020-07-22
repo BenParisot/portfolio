@@ -1,17 +1,17 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 const Nav = () => {
   return (
     <NavMain>
-      <Link to="/dev">
+      <Link to="/developer">
         <p>Development</p>
       </Link>
-      <Link to="/design">
+      <Link to="/designer">
         <p>Design</p>
       </Link>
-      <Link to="production">
+      <Link to="producer">
         <p>Production</p>
       </Link>
       <Link to="/blog/">
@@ -28,8 +28,10 @@ const NavMain = styled.nav`
   height: 42px;
   width: 100vw;
   grid-row-start: 1;
+  position: fixed;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding-right: 15px;
   background: linear-gradient(
     to right,
@@ -48,6 +50,9 @@ const NavMain = styled.nav`
     color: #f0ea49;
     margin: auto 20px;
     font-style: italic;
+  }
+  a {
+    box-shadow: none;
   }
 `
 

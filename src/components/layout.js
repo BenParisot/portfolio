@@ -13,53 +13,6 @@ import About from "../pages/about"
 
 class Layout extends React.Component {
   render() {
-  //   const { location, title, children } = this.props
-  //   const rootPath = `${__PATH_PREFIX__}/`
-  //   const blogPath = `${__PATH_PREFIX__}/blog/`
-  //   let header
-
-  //   if (location.pathname === rootPath || location.pathname === blogPath) {
-  //     header = (
-  //       <h1
-  //         style={{
-  //           ...scale(1.5),
-  //           marginBottom: rhythm(1.5),
-  //           marginTop: 0,
-  //         }}
-  //       >
-  //         <Link
-  //           style={{
-  //             boxShadow: `none`,
-  //             textDecoration: `none`,
-  //             color: `inherit`,
-  //           }}
-  //           to={location.pathname === blogPath ? `/blog/` : `/`}
-  //         >
-  //           {title}
-  //         </Link>
-  //       </h1>
-  //     )
-  //   } else {
-  //     header = (
-  //       <h3
-  //         style={{
-  //           fontFamily: `Montserrat, sans-serif`,
-  //           marginTop: 0,
-  //         }}
-  //       >
-  //         <Link
-  //           style={{
-  //             boxShadow: `none`,
-  //             textDecoration: `none`,
-  //             color: `inherit`,
-  //           }}
-  //           to={`/blog/`}
-  //         >
-  //           {title}
-  //         </Link>
-  //       </h3>
-  //     )
-  //   }
     return (
       <Wrapper>
         <Router>
@@ -67,15 +20,12 @@ class Layout extends React.Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/developer" component={Developer} />
             <Route exact path="/designer" component={Designer} />
-            <Route exact path="producer" component={Producer} />
+            <Route exact path="/producer" component={Producer} />
             <Route exact path="/about" component={About} />
             <Contact exact path="/contact" component={Contact} />
           </Switch>
         </Router>
-        <Footer>
-          <p>Designed and built by Ben Parisot in 2020</p>
-          <a href="#top">Back to the top</a>
-        </Footer>
+
       </Wrapper>
     )
   }
@@ -86,11 +36,6 @@ const Wrapper = styled.div`
   grid-template-columns: "auto auto auto auto auto auto";
   width: "100vw";
   height: "120vh";
-`
-
-const Footer = styled.footer`
-  text-align: center;
-  margin: 24px;
 `
 
 export default Layout
