@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 const Nav = () => {
@@ -11,7 +11,7 @@ const Nav = () => {
       <Link to="/designer">
         <p>Design</p>
       </Link>
-      <Link to="producer">
+      <Link to="/producer">
         <p>Production</p>
       </Link>
       <Link to="/blog/">

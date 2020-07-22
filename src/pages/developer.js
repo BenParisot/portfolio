@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import Nav from "../../components/nav"
-import SectionTitle from "../../components/sectionTitle"
-import CaseStudy from "../case-study/caseStudy"
-import Footer from "../../components/footer"
+import Nav from "../components/nav"
+import SectionTitle from "../components/sectionTitle"
+import CaseStudy from "./case-study/caseStudy"
+import Footer from "../components/footer"
 
 const Developer = () => {
   const title = `Ben Parisot, Full Stack Dev`

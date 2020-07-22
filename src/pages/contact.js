@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa"
-import Nav from "../../components/nav"
-import Footer from "../../components/footer"
+import Nav from "../components/nav"
+import Footer from "../components/footer"
 
 const Contact = () => {
   return (

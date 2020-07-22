@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import SectionTitle from "../../components/sectionTitle"
+import SectionTitle from "../components/sectionTitle"
 import Gallery from "react-photo-gallery"
-import Nav from "../../components/nav"
-import Footer from "../../components/footer"
+import Nav from "../components/nav"
+import Footer from "../components/footer"
 
 const Designer = () => {
   const title = `Ben Parisot, Digital Designer`
