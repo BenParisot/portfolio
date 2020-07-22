@@ -8,22 +8,22 @@ const Developer = () => {
   const title = `Ben Parisot, Digital Producer`
   const caseStudies = [
     {
-      title: "Weather.",
+      title: "Ben 10: Alien Experience.",
       description:
-        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
-      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
+        "An immersive level-based AR shooter for iOS and Android; 12-member project team; 1 year development time.",
+      imgUrl: "https://i.ytimg.com/vi/Pp_uCjtuSjE/maxresdefault.jpg",
     },
     {
-      title: "Weather.",
+      title: "Oracle Autonomous Runner.",
       description:
-        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
-      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
+        "Touchscreen racing game for Oracle Open World SF and Oracle Headquarters; 8-member project team; 5 month development time.",
+      imgUrl: "https://heliosinteractive.com/wordpress/wp-content/uploads/2018/12/OR_1.jpg",
     },
     {
-      title: "Weather.",
+      title: "Druva Climbing Challenge feat. The Mountain.",
       description:
-        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
-      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
+        "Motion-activated climbing simulator; 7-member project team; 4 month development time;",
+      imgUrl: "https://heliosinteractive.com/wordpress/wp-content/uploads/2018/11/Druva_2.jpg",
     },
   ]
 
@@ -42,12 +42,10 @@ const Developer = () => {
       <Nav />
       <SectionTitle title={title} />
       <Description>
-        I’m a design-driven full stack engineer. I believe good design leads to
-        clear product requirements and better technical understanding. Let's
-        work together to build something elegant and useful.
+      I’m an experienced technical producer and product manager with over 10 years experience in web production and software development. I’ve run agile development teams for enterprise clients that regularly delivered shippable features against hard deadlines. I have a supportive and empathetic leadership style and view the health and happiness of my team as my top management priority.
       </Description>
       <CaseStudies>
-        <h3>Case Studies:</h3>
+        <h3>Featured Projects:</h3>
         {caseStudyList}
       </CaseStudies>
     </ProducerMain>

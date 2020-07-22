@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 const Landing = () => {
   return (
     <Background>
@@ -56,20 +57,30 @@ const Landing = () => {
         <h1>Ben can help you build that.</h1>
       </Slogan>
       <Dev>
-        <h1>Developer</h1>
+        <Link to="/developer">
+          <h1>Developer</h1>
+        </Link>
       </Dev>
       <Design>
-        <h1>Designer</h1>
+        <Link to="/designer">
+          <h1>Designer</h1>
+        </Link>
       </Design>
       <Production>
-        <h1>Producer</h1>
+        <Link to="/producer">
+          <h1>Producer</h1>
+        </Link>
       </Production>
       <Nav>
         <li>
-          <span>Blog</span>
+          <span>
+            <Link to="/blog/">Blog</Link>
+          </span>
         </li>
         <li>
-          <span>Contact</span>
+          <span>
+            <Link to="/contact">Contact</Link>
+          </span>
         </li>
       </Nav>
     </Background>
@@ -145,12 +156,17 @@ const Nav = styled.ul`
   li {
     font-size: 1.5vw;
     list-style: none;
-    color: #d6ffb7;
-    font-style: italic;
+
     span {
       border-bottom: 5px solid white;
       margin-bottom: 15px;
       padding-bottom: 3px;
+      a {
+        color: #d6ffb7;
+        font-style: italic;
+        text-decoration: none;
+        box-shadow: none;
+      }
     }
   }
 `

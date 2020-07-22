@@ -1,20 +1,30 @@
-import React from 'react'
-// import { Link } from 'gatsby'
-import styled from 'styled-components'
+import React from "react"
+import { Link } from "gatsby"
+import styled from "styled-components"
 
 const Nav = () => {
   return (
     <NavMain>
-      <p>Development</p>
-      <p>Design</p>
-      <p>Production</p>
-      <p>Blog</p>
-      <p>Contact</p>
+      <Link to="/dev">
+        <p>Development</p>
+      </Link>
+      <Link to="/design">
+        <p>Design</p>
+      </Link>
+      <Link to="production">
+        <p>Production</p>
+      </Link>
+      <Link to="/blog/">
+        <p>Blog</p>
+      </Link>
+      <Link to="/contact">
+        <p>Contact</p>
+      </Link>
     </NavMain>
   )
 }
 
-const NavMain = styled.nav` 
+const NavMain = styled.nav`
   height: 42px;
   width: 100vw;
   grid-row-start: 1;
@@ -23,17 +33,22 @@ const NavMain = styled.nav`
   padding-right: 15px;
   background: linear-gradient(
     to right,
-    #F04D4D 16.66%, #ED4B64 16.66%,
-    #ED4B64 33.33%, #F04D4D 33.33%,
-    #F04D4D 49.99%, #F26639 49.99%,
-    #F26639 66.66%, #ED4B64 66.66%,
-    #ED4B64 83.33%, #F04D4D 83.33%
+    #f04d4d 16.66%,
+    #ed4b64 16.66%,
+    #ed4b64 33.33%,
+    #f04d4d 33.33%,
+    #f04d4d 49.99%,
+    #f26639 49.99%,
+    #f26639 66.66%,
+    #ed4b64 66.66%,
+    #ed4b64 83.33%,
+    #f04d4d 83.33%
   );
-    p {
-      color: #F0EA49;
-      margin: auto 20px;
-      font-style: italic;
-    }
+  p {
+    color: #f0ea49;
+    margin: auto 20px;
+    font-style: italic;
+  }
 `
 
 export default Nav
