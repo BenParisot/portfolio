@@ -1,58 +1,20 @@
 import React from "react"
-import styled from "styled-components"
-import { Link } from "gatsby"
+import styled, { keyframes } from "styled-components"
+import { Link, navigate } from "gatsby"
+import { fadeIn, slideInRight, slideOutUp } from "react-animations"
+
 const Landing = () => {
+  const handleOnClick = () => {
+    alert("click handled")
+  }
   return (
     <Background>
-      <div
-        id="top"
-        style={{
-          gridColumnStart: "1",
-          gridRowStart: "1",
-          gridRowEnd: "span 6",
-          backgroundColor: "#F04D4D",
-        }}
-      ></div>
-      <div
-        style={{
-          gridColumnStart: "2",
-          gridRowStart: "1",
-          gridRowEnd: "span 6",
-          backgroundColor: "#ED4B64",
-        }}
-      ></div>
-      <div
-        style={{
-          gridColumnStart: "3",
-          gridRowStart: "1",
-          gridRowEnd: "span 6",
-          backgroundColor: "#F04D4D",
-        }}
-      ></div>
-      <div
-        style={{
-          gridColumnStart: "4",
-          gridRowStart: "1",
-          gridRowEnd: "span 6",
-          backgroundColor: "#F26639",
-        }}
-      ></div>
-      <div
-        style={{
-          gridColumnStart: "5",
-          gridRowStart: "1",
-          gridRowEnd: "span 6",
-          backgroundColor: "#ED4B64",
-        }}
-      ></div>
-      <div
-        style={{
-          gridColumnStart: "6",
-          gridRowStart: "1",
-          gridRowEnd: "span 6",
-          backgroundColor: "#F04D4D",
-        }}
-      ></div>
+      <BackgroundDivOne />
+      <BackgroundDivTwo />
+      <BackgroundDivThree />
+      <BackgroundDivFour />
+      <BackgroundDivFive />
+      <BackgroundDivSix />
       <Slogan>
         <h1>Ben can help you build that.</h1>
       </Slogan>
@@ -79,13 +41,19 @@ const Landing = () => {
         </li>
         <li>
           <span>
-            <Link to="/contact">Contact</Link>
+            <Link onClick={handleOnClick} to="/contact">
+              Contact
+            </Link>
           </span>
         </li>
       </Nav>
     </Background>
   )
 }
+
+const fadeInAnimation = keyframes`${fadeIn}`
+const slideInRightAnimation = keyframes`${slideInRight}`
+const slideOutUpAnimation = keyframes`${slideOutUp}`
 
 const Background = styled.div`
   display: grid;
@@ -95,7 +63,57 @@ const Background = styled.div`
   height: 100vh;
 `
 
+const BackgroundDivOne = styled.div`
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: span 6;
+  background-color: #f04d4d;
+  animation: .5s ${slideOutUpAnimation};
+`
+
+const BackgroundDivTwo = styled.div` 
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-row-end: span 6;
+  background-color: #ED4B64;
+  animation: .75s ${slideOutUpAnimation};
+`
+
+const BackgroundDivThree = styled.div` 
+  grid-column-start: 3;
+  grid-row-start: 1;
+  grid-row-end: span 6;
+  background-color: #F04D4D;
+  animation: 1s ${slideOutUpAnimation};
+`
+
+const BackgroundDivFour = styled.div` 
+  grid-column-start: 4;
+  grid-row-start: 1;
+  grid-row-end: span 6;
+  background-color: #F26639;
+  animation: 1.25s ${slideOutUpAnimation};
+`
+
+const BackgroundDivFive = styled.div` 
+  grid-column-start: 5;
+  grid-row-start: 1;
+  grid-row-end: span 6;
+  background-color: #ED4B64;
+  animation: 1.5s ${slideOutUpAnimation};
+`
+
+const BackgroundDivSix = styled.div` 
+  grid-column-start: 6;
+  grid-row-start: 1;
+  grid-row-end: span 6;
+  background-color: #F04D4D;
+  animation: 1.75s ${slideOutUpAnimation};
+`
+
+
 const Slogan = styled.div`
+    animation: 2s ${slideInRightAnimation};
   text-transform: uppercase;
   color: #f0ea49;
   grid-column: 3 / span 4;
@@ -119,6 +137,7 @@ const Dev = styled.div`
     font-size: 10vh;
     writing-mode: vertical-rl;
   }
+  animation: 1.5s ${fadeInAnimation};
 `
 
 const Design = styled.div`
@@ -133,6 +152,7 @@ const Design = styled.div`
     font-size: 10vh;
     writing-mode: vertical-rl;
   }
+  animation: 2s ${fadeInAnimation};
 `
 
 const Production = styled.div`
@@ -147,6 +167,7 @@ const Production = styled.div`
     font-size: 10vh;
     writing-mode: vertical-rl;
   }
+  animation: 2.5s ${fadeInAnimation};
 `
 
 const Nav = styled.ul`
@@ -169,5 +190,6 @@ const Nav = styled.ul`
       }
     }
   }
+  animation: 3s ${fadeInAnimation};
 `
 export default Landing

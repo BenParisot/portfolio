@@ -14,36 +14,41 @@ const Contact = () => {
             I'm currently available for fulltime and contract positions. Give me
             a call or drop me a line and let's chat.
           </p>
-        </ContactDescription>
-        <ContactLinks>
-          <p>
-            <span className="email">Email:</span> me@benparisot.com
-          </p>
           <div className="icons">
             <FaTwitter size="48" color="#ed4b64" />
             <FaLinkedin size="48" color="#f04d4d" />
             <FaGithub size="48" color="#F26639" />
           </div>
-        </ContactLinks>
+        </ContactDescription>
+        <ContactForm>
+          <label>
+            <input type="text" placeholder="Name" />
+          </label>
+          <label>
+            <input type="email" placeholder="Email Address" />
+          </label>
+          <label>
+            <input type="textarea" placeholder="Your Message" />
+          </label>
+          <input type="submit" />
+        </ContactForm>
       </ContactMain>
       <Footer />
     </>
   )
 }
 
-const ContactMain = styled.div`
+const ContactMain = styled.div` 
   width: 100vw;
   height: 100vh;
   display: flex;
-  /* grid-template-columns: auto auto;
-  grid-template-rows: 45px auto; */
   justify-content: center;
   align-items: center;
 `
 
 const ContactDescription = styled.div`
   width: 40%;
-  font-size: 1.8rem;
+
   padding: 2.5rem;
 `
 
@@ -68,6 +73,10 @@ const ContactLinks = styled.div`
     display: flex;
     justify-content: space-between;
   }
+`
+const ContactForm = styled.form` 
+display: flex;
+flex-direction: column;
 `
 
 export default Contact
