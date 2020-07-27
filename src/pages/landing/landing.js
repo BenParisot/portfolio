@@ -1,14 +1,32 @@
-import React from "react"
+import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
 import { Link, navigate } from "gatsby"
 import { fadeIn, slideInRight, slideOutUp } from "react-animations"
+import { Transition } from "react-transition-group"
+import "./styles.css"
 
 const Landing = () => {
   const handleOnClick = () => {
     alert("click handled")
   }
+  const [inProp, setInProp] = useState(false)
+
   return (
     <Background>
+      <Transition
+        in={inProp}
+        timeout={{
+          appear: 400,
+          enter: 300,
+          exit: 500,
+        }}
+      >{state => (
+        <h1>
+          I am {state}
+        </h1>
+      )}
+      </Transition>
+
       <BackgroundDivOne />
       <BackgroundDivTwo />
       <BackgroundDivThree />
@@ -16,7 +34,10 @@ const Landing = () => {
       <BackgroundDivFive />
       <BackgroundDivSix />
       <Slogan>
-        <h1>Ben can help you build that.</h1>
+        <h1 onClick={() => {
+          setInProp(!inProp)
+          console.log('inProp', inProp)
+        }}>Ben can help you build that.</h1>
       </Slogan>
       <Dev>
         <Link to="/developer">
@@ -62,58 +83,55 @@ const Background = styled.div`
   width: 100vw;
   height: 100vh;
 `
-
 const BackgroundDivOne = styled.div`
   grid-column-start: 1;
   grid-row-start: 1;
   grid-row-end: span 6;
   background-color: #f04d4d;
-  animation: .5s ${slideOutUpAnimation};
+  /* animation: 0.5s ${slideOutUpAnimation}; */
 `
-
-const BackgroundDivTwo = styled.div` 
+const BackgroundDivTwo = styled.div`
   grid-column-start: 2;
   grid-row-start: 1;
   grid-row-end: span 6;
-  background-color: #ED4B64;
-  animation: .75s ${slideOutUpAnimation};
+  background-color: #ed4b64;
+  /* animation: 0.75s ${slideOutUpAnimation}; */
 `
 
-const BackgroundDivThree = styled.div` 
+const BackgroundDivThree = styled.div`
   grid-column-start: 3;
   grid-row-start: 1;
   grid-row-end: span 6;
-  background-color: #F04D4D;
-  animation: 1s ${slideOutUpAnimation};
+  background-color: #f04d4d;
+  /* animation: 1s ${slideOutUpAnimation}; */
 `
 
-const BackgroundDivFour = styled.div` 
+const BackgroundDivFour = styled.div`
   grid-column-start: 4;
   grid-row-start: 1;
   grid-row-end: span 6;
-  background-color: #F26639;
-  animation: 1.25s ${slideOutUpAnimation};
+  background-color: #f26639;
+  /* animation: 1.25s ${slideOutUpAnimation}; */
 `
 
-const BackgroundDivFive = styled.div` 
+const BackgroundDivFive = styled.div`
   grid-column-start: 5;
   grid-row-start: 1;
   grid-row-end: span 6;
-  background-color: #ED4B64;
-  animation: 1.5s ${slideOutUpAnimation};
+  background-color: #ed4b64;
+  /* animation: 1.5s ${slideOutUpAnimation}; */
 `
 
-const BackgroundDivSix = styled.div` 
+const BackgroundDivSix = styled.div`
   grid-column-start: 6;
   grid-row-start: 1;
   grid-row-end: span 6;
-  background-color: #F04D4D;
-  animation: 1.75s ${slideOutUpAnimation};
+  background-color: #f04d4d;
+  /* animation: 1.75s ${slideOutUpAnimation}; */
 `
 
-
 const Slogan = styled.div`
-    animation: 2s ${slideInRightAnimation};
+  animation: 2s ${slideInRightAnimation};
   text-transform: uppercase;
   color: #f0ea49;
   grid-column: 3 / span 4;
