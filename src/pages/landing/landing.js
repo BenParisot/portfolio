@@ -1,44 +1,44 @@
 import React, { useState } from "react"
-import styled, { keyframes } from "styled-components"
+import styled, { keyframes, css } from "styled-components"
 import { Link, navigate } from "gatsby"
 import { fadeIn, slideInRight, slideOutUp } from "react-animations"
-import { Transition } from "react-transition-group"
+import { CSSTransition } from "react-transition-group"
 import "./styles.css"
 
 const Landing = () => {
-  const handleOnClick = () => {
-    alert("click handled")
-  }
-  const [inProp, setInProp] = useState(false)
+  const [inProp, setInProp] = useState(true)
 
+  const handleOnClick = () => {
+    setInProp(!inProp)
+    setTimeout(() => navigate("/contact"), 2000)
+  }
   return (
     <Background>
-      <Transition
-        in={inProp}
-        timeout={{
-          appear: 400,
-          enter: 300,
-          exit: 500,
-        }}
-      >{state => (
-        <h1>
-          I am {state}
-        </h1>
-      )}
-      </Transition>
-
-      <BackgroundDivOne />
-      <BackgroundDivTwo />
-      <BackgroundDivThree />
-      <BackgroundDivFour />
-      <BackgroundDivFive />
-      <BackgroundDivSix />
-      <Slogan>
-        <h1 onClick={() => {
-          setInProp(!inProp)
-          console.log('inProp', inProp)
-        }}>Ben can help you build that.</h1>
-      </Slogan>
+      <CSSTransition in={inProp} timeout={400} unmountOnExit>
+        {state => <BackgroundDivOne state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={900} unmountOnExit>
+        {state => <BackgroundDivTwo state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={1400} unmountOnExit>
+        {state => <BackgroundDivThree state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={1900} unmountOnExit>
+        {state => <BackgroundDivFour state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={2400} unmountOnExit>
+        {state => <BackgroundDivFive state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={2900} unmountOnExit>
+        {state => <BackgroundDivSix state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={1500} unmountOnExit>
+        {state => (
+          <Slogan state={state}>
+            <h1>Ben can help you build that.</h1>
+          </Slogan>
+        )}
+      </CSSTransition>
       <Dev>
         <Link to="/developer">
           <h1>Developer</h1>
@@ -62,9 +62,7 @@ const Landing = () => {
         </li>
         <li>
           <span>
-            <Link onClick={handleOnClick} to="/contact">
-              Contact
-            </Link>
+            <h1 onClick={handleOnClick}>Contact</h1>
           </span>
         </li>
       </Nav>
@@ -75,6 +73,12 @@ const Landing = () => {
 const fadeInAnimation = keyframes`${fadeIn}`
 const slideInRightAnimation = keyframes`${slideInRight}`
 const slideOutUpAnimation = keyframes`${slideOutUp}`
+const firstOut = '.5s'
+const secondOut = '1s'
+const thirdOut = '1.5s'
+const fourthOut = '2s'
+const fifthOut = '2.5s'
+const sixthOut = '3s'
 
 const Background = styled.div`
   display: grid;
@@ -84,54 +88,71 @@ const Background = styled.div`
   height: 100vh;
 `
 const BackgroundDivOne = styled.div`
+  animation: ${({ state }) => {
+    if (state === "exiting" || state === "exited") return css`${firstOut} ${slideOutUpAnimation}`
+  }};
   grid-column-start: 1;
   grid-row-start: 1;
   grid-row-end: span 6;
   background-color: #f04d4d;
-  /* animation: 0.5s ${slideOutUpAnimation}; */
 `
 const BackgroundDivTwo = styled.div`
+  animation: ${({ state }) => {
+    if (state === "exiting" || state === "exited") return css`${secondOut} ${slideOutUpAnimation}`
+  }};
   grid-column-start: 2;
   grid-row-start: 1;
   grid-row-end: span 6;
   background-color: #ed4b64;
-  /* animation: 0.75s ${slideOutUpAnimation}; */
 `
 
 const BackgroundDivThree = styled.div`
+  animation: ${({ state }) => {
+    if (state === "exiting" || state === "exited") return css`${thirdOut} ${slideOutUpAnimation}`
+  }};
   grid-column-start: 3;
   grid-row-start: 1;
   grid-row-end: span 6;
   background-color: #f04d4d;
-  /* animation: 1s ${slideOutUpAnimation}; */
 `
 
 const BackgroundDivFour = styled.div`
+  animation: ${({ state }) => {
+    if (state === "exiting" || state === "exited") return css`${fourthOut} ${slideOutUpAnimation}`
+  }};
   grid-column-start: 4;
   grid-row-start: 1;
   grid-row-end: span 6;
   background-color: #f26639;
-  /* animation: 1.25s ${slideOutUpAnimation}; */
 `
 
 const BackgroundDivFive = styled.div`
+  animation: ${({ state }) => {
+    if (state === "exiting" || state === "exited") return css`${fifthOut} ${slideOutUpAnimation}`
+  }};
   grid-column-start: 5;
   grid-row-start: 1;
   grid-row-end: span 6;
   background-color: #ed4b64;
-  /* animation: 1.5s ${slideOutUpAnimation}; */
 `
 
 const BackgroundDivSix = styled.div`
+  animation: ${({ state }) => {
+    if (state === "exiting" || state === "exited") return css`${sixthOut} ${slideOutUpAnimation}`
+  }};
   grid-column-start: 6;
   grid-row-start: 1;
   grid-row-end: span 6;
   background-color: #f04d4d;
-  /* animation: 1.75s ${slideOutUpAnimation}; */
 `
 
 const Slogan = styled.div`
-  animation: 2s ${slideInRightAnimation};
+  animation: ${({ state }) => {
+    if (state === "entering" || state === "entered")
+      return css`2s ${slideInRightAnimation}`
+    if (state === "exiting" || state === "exited")
+      return css`2s ${slideOutUpAnimation}`
+  }};
   text-transform: uppercase;
   color: #f0ea49;
   grid-column: 3 / span 4;
