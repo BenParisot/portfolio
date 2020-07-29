@@ -1,11 +1,12 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import Nav from "../components/nav"
 import SectionTitle from "../components/sectionTitle"
 import CaseStudy from "./case-study/caseStudy"
 import Footer from "../components/footer"
+import { fadeIn, slideInUp } from 'react-animations'
 
-const Developer = () => {
+const Developer = (props) => {
   const title = `Ben Parisot, Full Stack Dev`
   const caseStudies = [
     {
@@ -58,6 +59,9 @@ const Developer = () => {
   )
 }
 
+const fadeInAnimation = keyframes`${fadeIn}`
+const slideInUpAnimation = keyframes`${slideInUp}`
+
 const DeveloperMain = styled.div`
   width: 100vw;
   height: 100%;
@@ -68,10 +72,12 @@ const DeveloperMain = styled.div`
 `
 
 const Description = styled.div`
+  animation: 1.5s ${fadeInAnimation};
   grid-column: 3 / span 3;
   grid-row-start: 4;
 `
 const CaseStudies = styled.div`
+  animation: 1s ${slideInUpAnimation};
   grid-column: 2 / span 4;
   grid-row-start: 5;
   h3 {

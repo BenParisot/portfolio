@@ -1,9 +1,10 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import SectionTitle from "../components/sectionTitle"
 import Gallery from "react-photo-gallery"
 import Nav from "../components/nav"
 import Footer from "../components/footer"
+import { fadeIn, slideInUp } from 'react-animations'
 
 const Designer = () => {
   const title = `Ben Parisot, Digital Designer`
@@ -82,7 +83,6 @@ const Designer = () => {
     },
   ]
 
-  const columns = 2
   return (
     <>
       <DesignerMain>
@@ -110,21 +110,26 @@ const Designer = () => {
   )
 }
 
+const fadeInAnimation = keyframes`${fadeIn}`
+const slideInUpAnimation = keyframes`${slideInUp}`
+
 const DesignerMain = styled.div`
   width: 100vw;
   height: 100%;
   display: grid;
   padding-bottom: 250px;
   grid-template-columns: 16% 16% 16% 16% auto 16%;
-  grid-template-rows: 125px 165px 85px 10%;
+  grid-template-rows: 125px 165px 85px 150px auto;
 `
 
 const Description = styled.div`
+  animation: 1.5s ${fadeInAnimation};
   grid-column: 3 / span 3;
   grid-row-start: 4;
 `
 
 const Portfolio = styled.div`
+  animation: 1s ${slideInUpAnimation};
   grid-column: 2 / span 4;
   grid-row-start: 5;
   h3 {

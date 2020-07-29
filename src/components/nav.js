@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
-
+import styled, { keyframes } from "styled-components"
+import { fadeIn } from "react-animations"
+ 
 const Nav = () => {
   return (
     <NavMain>
@@ -23,6 +24,8 @@ const Nav = () => {
     </NavMain>
   )
 }
+
+const fadeInAnimation = keyframes`${fadeIn}`
 
 const NavMain = styled.nav`
   height: 42px;
@@ -47,6 +50,7 @@ const NavMain = styled.nav`
     #f04d4d 83.33%
   );
   p {
+    /* animation: 1s ${fadeInAnimation}; */
     color: #f0ea49;
     margin: auto 20px;
     font-style: italic;

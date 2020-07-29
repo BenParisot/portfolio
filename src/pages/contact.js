@@ -15,22 +15,22 @@ const Contact = () => {
             a call or drop me a line and let's chat.
           </p>
           <div className="icons">
-            <FaTwitter size="48" color="#ed4b64" />
-            <FaLinkedin size="48" color="#f04d4d" />
-            <FaGithub size="48" color="#F26639" />
+            <FaTwitter className="icon" size="48" color="#ed4b64" />
+            <FaLinkedin className="icon" size="48" color="#f04d4d" />
+            <FaGithub className="icon" size="48" color="#F26639" />
           </div>
         </ContactDescription>
         <ContactForm>
           <label>
-            <input type="text" placeholder="Name" />
+            <FormInput type="text" placeholder="Name" />
           </label>
           <label>
-            <input type="email" placeholder="Email Address" />
+            <FormInput type="email" placeholder="Email Address" />
           </label>
           <label>
-            <input type="textarea" placeholder="Your Message" />
+            <FormInput type="textarea" placeholder="Your Message" />
           </label>
-          <input type="submit" />
+          <FormButton type="submit" />
         </ContactForm>
       </ContactMain>
       <Footer />
@@ -38,7 +38,7 @@ const Contact = () => {
   )
 }
 
-const ContactMain = styled.div` 
+const ContactMain = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -48,35 +48,48 @@ const ContactMain = styled.div`
 
 const ContactDescription = styled.div`
   width: 40%;
-
   padding: 2.5rem;
-`
-
-const ContactLinks = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 40%;
-  height: 50vh;
-  border-left: 6px solid #f0ea49;
-  padding: 2.5rem;
-  margin-top: 1rem;
-  line-height: 2;
-  font-size: 1.125rem;
-  .email {
-    font-weight: 700;
-    color: #ed4b64;
-    text-transform: uppercase;
-  }
   .icons {
     width: 40%;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+    .icon {
+      transition: transform 1s ease-in-out;
+      :hover {
+        transform: rotate(360deg);
+      }
+    }
   }
 `
-const ContactForm = styled.form` 
-display: flex;
-flex-direction: column;
+
+const ContactForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+`
+
+const FormInput = styled.input`
+  width: 100%;
+  padding: 10px 25px;
+  margin-bottom: 35px;
+`
+
+const FormButton = styled.input`
+  border: none;
+  background-color: #f0ea49;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  color: #f04d4d;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.5s;
+  cursor: pointer;
+  :hover {
+    transition: 0.5s ease-in-out;
+    background-color: #f04d4d;
+    color: white;
+  }
 `
 
 export default Contact
