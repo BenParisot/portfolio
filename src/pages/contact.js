@@ -1,8 +1,9 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa"
 import Nav from "../components/nav"
 import Footer from "../components/footer"
+import { fadeIn } from 'react-animations'
 
 const Contact = () => {
   return (
@@ -38,16 +39,21 @@ const Contact = () => {
   )
 }
 
+const fadeInAnimation = keyframes`${fadeIn}`;
+
 const ContactMain = styled.div`
+  animation: 1s ${fadeInAnimation};
   width: 100vw;
   height: 100vh;
   display: flex;
+  padding-left: 15%;
+  padding-right: 15%;
   justify-content: center;
   align-items: center;
 `
 
 const ContactDescription = styled.div`
-  width: 40%;
+  width: 60%;
   padding: 2.5rem;
   .icons {
     width: 40%;
