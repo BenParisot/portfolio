@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     // edit below
-    title: `Gatsby Starter Personal Blog`,
-    author: `Gatsby`,
-    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
+    title: `Ben Parisot Design & Development`,
+    author: `Ben Parisot`,
+    description: `Ben Parisot is a design-driven full stack developer working mostly in JavaScript, React, Node, TypeScript, and GraphQL. Mostly.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
       twitter: `gatsbyjs`,

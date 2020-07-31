@@ -1,17 +1,17 @@
 import React from "react"
-// import { Link } from "gatsby"
+import Landing from "../pages/landing/landing"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
 class IndexPage extends React.Component {
   render() {
-
+    const location = this.props.location
+    console.log("location", location)
+    const siteTitle = "Ben Parisot Design & Development"
     return (
-      <Layout>
-        <SEO
-          title="Home"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
+      <Layout location={this.props.children} title={siteTitle}>
+        {/* <SEO title="Home" /> */}
+        <Landing />
       </Layout>
     )
   }

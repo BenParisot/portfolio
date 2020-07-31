@@ -8,7 +8,7 @@ import { fadeIn } from 'react-animations'
 const Contact = () => {
   return (
     <>
-      <Nav />
+      <Nav location="Contact" />
       <ContactMain>
         <ContactDescription>
           <p>
@@ -16,9 +16,9 @@ const Contact = () => {
             a call or drop me a line and let's chat.
           </p>
           <div className="icons">
-            <FaTwitter className="icon" size="48" color="#ed4b64" />
-            <FaLinkedin className="icon" size="48" color="#f04d4d" />
-            <FaGithub className="icon" size="48" color="#F26639" />
+            <a target="blank" href="https://twitter.com/HereCodesNothin"><FaTwitter className="icon" size="48" color="#ed4b64" /></a>
+            <a target="blank" href="https://www.linkedin.com/in/benparisot/"><FaLinkedin className="icon" size="48" color="#f04d4d" /></a>
+            <a target="blank" href="https://github.com/benparisot"><FaGithub className="icon" size="48" color="#F26639" /></a>
           </div>
         </ContactDescription>
         <ContactForm>
@@ -60,11 +60,9 @@ const ContactDescription = styled.div`
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    .icon {
-      transition: transform 1s ease-in-out;
-      :hover {
-        transform: rotate(360deg);
-      }
+    font-style: none;
+    a {
+      box-shadow: none;
     }
   }
 `

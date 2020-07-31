@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
 import { navigate } from "gatsby"
 import { fadeIn, slideInRight } from "react-animations"
+import SEO from '../../components/seo'
 import { CSSTransition } from "react-transition-group"
 
 const Landing = () => {
@@ -13,80 +14,81 @@ const Landing = () => {
     setTimeout(() => navigate(`/${page}`), 1750)
   }
   return (
-      <Background>
-        <CSSTransition in={inProp} timeout={250}>
-          {state => <BackgroundDivOne state={state} />}
-        </CSSTransition>
-        <CSSTransition in={inProp} timeout={500}>
-          {state => <BackgroundDivTwo state={state} />}
-        </CSSTransition>
-        <CSSTransition in={inProp} timeout={750}>
-          {state => <BackgroundDivThree state={state} />}
-        </CSSTransition>
-        <CSSTransition in={inProp} timeout={1000}>
-          {state => <BackgroundDivFour state={state} />}
-        </CSSTransition>
-        <CSSTransition in={inProp} timeout={1250}>
-          {state => <BackgroundDivFive state={state} />}
-        </CSSTransition>
-        <CSSTransition in={inProp} timeout={1500}>
-          {state => <BackgroundDivSix state={state} />}
-        </CSSTransition>
-        <CSSTransition in={inProp} timeout={2000} unmountOnExit>
-          {state => (
-            <Slogan state={state}>
-              <h1>Ben can help you build that.</h1>
-            </Slogan>
-          )}
-        </CSSTransition>
-        <CSSTransition in={inProp} timeout={1500} unmountOnExit>
-          {state => (
-            <Dev state={state}>
-              <h1 id="developer" onClick={handleOnClick}>
-                Developer
-              </h1>
-            </Dev>
-          )}
-        </CSSTransition>
-        <CSSTransition in={inProp} timeout={1500} unmountOnExit>
-          {state => (
-            <Design state={state}>
-              <h1 id="designer" onClick={handleOnClick}>
-                Designer
-              </h1>
-            </Design>
-          )}
-        </CSSTransition>
-        <CSSTransition in={inProp} timeout={1500} unmountOnExit>
-          {state => (
-            <Production state={state}>
-              <h1 id="producer" onClick={handleOnClick}>
-                Producer
-              </h1>
-            </Production>
-          )}
-        </CSSTransition>
-        <CSSTransition in={inProp} timeout={1500} unmountOnExit>
-          {state => (
-            <Nav state={state}>
-              <li>
-                <span>
-                  <p id="blog" onClick={handleOnClick}>
-                    Blog
-                  </p>
-                </span>
-              </li>
-              <li>
-                <span>
-                  <p id="contact" onClick={handleOnClick}>
-                    Contact
-                  </p>
-                </span>
-              </li>
-            </Nav>
-          )}
-        </CSSTransition>
-      </Background>
+    <Background>
+      <SEO title="Home" />
+      <CSSTransition in={inProp} timeout={250}>
+        {state => <BackgroundDivOne state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={500}>
+        {state => <BackgroundDivTwo state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={750}>
+        {state => <BackgroundDivThree state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={1000}>
+        {state => <BackgroundDivFour state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={1250}>
+        {state => <BackgroundDivFive state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={1500}>
+        {state => <BackgroundDivSix state={state} />}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={2000} unmountOnExit>
+        {state => (
+          <Slogan state={state}>
+            <h1>Ben can help you build that.</h1>
+          </Slogan>
+        )}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={1500} unmountOnExit>
+        {state => (
+          <Dev state={state}>
+            <h1 id="developer" onClick={handleOnClick}>
+              Developer
+            </h1>
+          </Dev>
+        )}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={1500} unmountOnExit>
+        {state => (
+          <Design state={state}>
+            <h1 id="designer" onClick={handleOnClick}>
+              Designer
+            </h1>
+          </Design>
+        )}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={1500} unmountOnExit>
+        {state => (
+          <Production state={state}>
+            <h1 id="producer" onClick={handleOnClick}>
+              Producer
+            </h1>
+          </Production>
+        )}
+      </CSSTransition>
+      <CSSTransition in={inProp} timeout={1500} unmountOnExit>
+        {state => (
+          <Nav state={state}>
+            <li>
+              <span>
+                <p id="blog" onClick={handleOnClick}>
+                  Blog
+                </p>
+              </span>
+            </li>
+            <li>
+              <span>
+                <p id="contact" onClick={handleOnClick}>
+                  Contact
+                </p>
+              </span>
+            </li>
+          </Nav>
+        )}
+      </CSSTransition>
+    </Background>
   )
 }
 

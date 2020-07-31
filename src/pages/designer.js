@@ -86,7 +86,7 @@ const Designer = () => {
   return (
     <>
       <DesignerMain>
-        <Nav />
+        <Nav location="Digital Designer" />
         <SectionTitle title={title} />
         <Description>
           I’m an experienced UX/UI designer and digital illustrator with a

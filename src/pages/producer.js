@@ -42,7 +42,7 @@ const Producer = () => {
   return (
     <>
     <ProducerMain>
-      <Nav />
+      <Nav location="Producer" />
       <SectionTitle title={title} />
       <Description>
       I’m an experienced technical producer and product manager with over 10 years experience in web production and software development. I’ve run agile development teams for enterprise clients that regularly delivered shippable features against hard deadlines. I have a supportive and empathetic leadership style and view the health and happiness of my team as my top management priority.

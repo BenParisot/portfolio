@@ -42,7 +42,7 @@ const Developer = (props) => {
   return (
     <>
       <DeveloperMain>
-        <Nav />
+        <Nav location="Full Stack Developer" />
         <SectionTitle title={title} />
         <Description>
           I’m a design-driven full stack engineer. I believe good design leads

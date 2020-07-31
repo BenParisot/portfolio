@@ -2,10 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 import styled, { keyframes } from "styled-components"
 import { fadeIn } from "react-animations"
+import SEO from "../components/seo"
  
-const Nav = () => {
+const Nav = ({ location }) => {
   return (
     <NavMain>
+      <SEO title={location} />
       <Link to="/developer">
         <p>Development</p>
       </Link>
