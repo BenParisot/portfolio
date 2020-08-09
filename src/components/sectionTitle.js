@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { fadeIn, slideInLeft } from 'react-animations'
+import { fadeIn, slideInLeft } from "react-animations"
 
 const SectionTitle = props => {
   const { title } = props
@@ -15,10 +15,6 @@ const SectionTitle = props => {
 const slideInLeftAnimation = keyframes`${slideInLeft}`
 const fadeInAnimation = keyframes`${fadeIn}`
 
-const TitleWrapper = styled.div`
-  animation: 1s ${slideInLeftAnimation};
-`
-
 const Title = styled.h1`
   animation: 1s ${slideInLeftAnimation};
   text-transform: uppercase;
@@ -27,12 +23,13 @@ const Title = styled.h1`
   font-style: italic;
   grid-column: 2 / span 4;
   grid-row-start: 2;
+  margin: auto 0;
 `
 
 const TitleBackground = styled.div`
   animation: 1s ${fadeInAnimation};
   background-color: #f0ea49;
-  height: 11vw;
+  height: 100%;
   grid-column: 1 / span 3;
   grid-row-start: 2;
 `
