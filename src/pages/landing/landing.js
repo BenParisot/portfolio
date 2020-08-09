@@ -211,7 +211,7 @@ const Design = styled.div`
     transition: ${({ state }) =>
       state === "exiting" || state === "exited" ? ".5s" : ""};
     color: ${({ state }) =>
-      state === "exiting" || state === "exited" ? "#f04d4d" : "#5bc0eb"};
+      state === "exiting" || state === "exited" ? "#f04d4d" : "#bbe8fb"};
     text-transform: uppercase;
     border-top: 10px solid #d6ffb7;
     padding-top: 20px;
