@@ -164,7 +164,7 @@ const BackgroundDivSix = styled.div`
 const Slogan = styled.div`
   animation: 1.5s ${slideInRightAnimation};
   text-transform: uppercase;
-  color: #f0ea49;
+  color: #f7f195;
   grid-column: 3 / span 4;
   grid-row-start: 1;
   position: relative;

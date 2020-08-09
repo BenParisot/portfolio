@@ -12,8 +12,7 @@ const Contact = () => {
       <ContactMain>
         <ContactDescription>
           <p>
-            I'm currently available for fulltime and contract positions. Give me
-            a call or drop me a line and let's chat.
+            I'm currently available for fulltime and contract positions. Drop me a line and let's chat.
           </p>
           <div className="icons">
             <a target="blank" href="https://twitter.com/HereCodesNothin"><FaTwitter className="icon" size="48" color="#ed4b64" /></a>
@@ -56,7 +55,7 @@ const ContactDescription = styled.div`
   width: 60%;
   padding: 2.5rem;
   .icons {
-    width: 40%;
+    width: 45%;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -70,7 +69,7 @@ const ContactDescription = styled.div`
 const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 35%;
 `
 
 const FormInput = styled.input`

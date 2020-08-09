@@ -53,7 +53,7 @@ const NavMain = styled.nav`
   );
   p {
     /* animation: 1s ${fadeInAnimation}; */
-    color: #f0ea49;
+    color: #f7f195;
     margin: auto 20px;
     font-style: italic;
   }
