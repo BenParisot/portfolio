@@ -40,16 +40,16 @@ const NavMain = styled.nav`
   padding-right: 15px;
   background: linear-gradient(
     to right,
-    #f04d4d 16.66%,
-    #ed4b64 16.66%,
-    #ed4b64 33.33%,
-    #f04d4d 33.33%,
-    #f04d4d 49.99%,
-    #f26639 49.99%,
-    #f26639 66.66%,
-    #ed4b64 66.66%,
-    #ed4b64 83.33%,
-    #f04d4d 83.33%
+    #f04d4d 16.6%,
+    #ed4b64 16.6%,
+    #ed4b64 33.2%,
+    #f04d4d 33.2%,
+    #f04d4d 49.8%,
+    #f26639 49.8%,
+    #f26639 66.4%,
+    #ed4b64 66.4%,
+    #ed4b64 83%,
+    #f04d4d 83%
   );
   p {
     /* animation: 1s ${fadeInAnimation}; */
