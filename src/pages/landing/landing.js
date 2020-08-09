@@ -97,7 +97,7 @@ const slideInRightAnimation = keyframes`${slideInRight}`
 
 const Background = styled.div`
   display: grid;
-  grid-template-columns: 16% 16% 16% 16% auto 16%;
+  grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% auto;
   grid-template-rows: 16% 16% auto 16% 16% 16%;
   width: 100vw;
   height: 100vh;
