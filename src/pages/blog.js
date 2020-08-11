@@ -8,6 +8,7 @@ import { rhythm } from "../utils/typography"
 import Button from "../components/button"
 import Nav from "../components/nav"
 import styled, { keyframes } from "styled-components"
+import SectionTitle from "../components/sectionTitle"
 
 class Blog extends React.Component {
   render() {
@@ -22,11 +23,16 @@ class Blog extends React.Component {
     console.log("sorted posts", sortedPosts)
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <BlogList>
+        <BlogListContainer>
           <Nav />
+          <BlogListHero>
+            <div></div>
+            <h1>Here Codes Nothing!</h1>
+            <p>A blog about creative coding, design, and trying new things.</p>
+          </BlogListHero>
           <SEO title="All posts" />
           {/* <Bio /> */}
-          <div>
+          <BlogList>
             {sortedPosts.map(post => {
               const title = post.frontmatter.title || post.fields.slug
               return (
@@ -52,11 +58,11 @@ class Blog extends React.Component {
                 </div>
               )
             })}
-          </div>
-          <Link to="/">
-            <Button marginTop="85px">Go Home</Button>
-          </Link>
-        </BlogList>
+            <Link to="/">
+              <Button marginTop="85px">Go Home</Button>
+            </Link>
+          </BlogList>
+        </BlogListContainer>
       </Layout>
     )
   }
@@ -64,10 +70,44 @@ class Blog extends React.Component {
 
 export default Blog
 
-const BlogList = styled.div`
+const BlogListContainer = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
+`
+
+const BlogListHero = styled.div`
+  height: 40vh;
+  display: grid;
+  grid-template-columns: 16.66% 16.66% 16.66% 16.66% auto auto;
+  grid-template-rows: auto 33% 33%;
+  background-color: #f04d4d;
+  grid-column: 1 / span 2;
+  div {
+    grid-column: 1 / 3;
+    grid-row-start: 2;
+    background-color: #f26639;
+  }
+  h1 {
+      color: #f0ea49;
+      text-transform: uppercase;
+      font-style: italic;
+      font-size: 3.5vw;
+      grid-column: 2 / 5;
+      grid-row-start: 2;
+      margin: auto 0;
+    }
+  p {
+    grid-column: 4 / 6;
+    grid-row-start: 3;
+    color: white;
+    margin: auto 0;
+    font-size: 18px;
+  }
+`
+
+const BlogList = styled.div`
+  grid-row-start: 2;
 `
 
 export const pageQuery = graphql`
