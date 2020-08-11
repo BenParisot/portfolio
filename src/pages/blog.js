@@ -83,9 +83,6 @@ class Blog extends React.Component {
                 </>
               )
             })}
-            <Link to="/">
-              <Button marginTop="85px">Go Home</Button>
-            </Link>
           </BlogList>
         </BlogListContainer>
       </Layout>
@@ -162,12 +159,15 @@ const BlogListing = styled.div`
       margin-bottom: 0;
     }
     h3 a {
+      font-family: Montserrat, sans-serif;
       margin-top: 0;
       text-transform: uppercase;
       color: #f04d4d;
       font-style: italic;
+      font-weight: bold;
     }
     .post-link {
+      font-family: Montserrat, sans-serif;
       text-transform: uppercase;
       text-decoration: none;
       box-shadow: none;
