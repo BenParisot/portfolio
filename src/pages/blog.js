@@ -36,26 +36,51 @@ class Blog extends React.Component {
             {sortedPosts.map(post => {
               const title = post.frontmatter.title || post.fields.slug
               return (
-                <div key={post.fields.slug}>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                  >
-                    <Link
-                      style={{ boxShadow: `none` }}
-                      to={`/blog${post.fields.slug}`}
-                    >
-                      {title}
-                    </Link>
-                  </h3>
-                  <small>{post.frontmatter.date}</small>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                  />
-                </div>
+                <>
+                  <BlogListing key={post.fields.slug}>
+                    <div className="date-tags">
+                      <p>
+                        <small>{post.frontmatter.date}</small>
+                      </p>
+                      <p>
+                        <small>
+                          coding, management philosophy, technical projects,
+                          project management
+                        </small>
+                      </p>
+                    </div>
+                    <div className="teaser">
+                      <img
+                        src="https://cdn.windowsreport.com/wp-content/uploads/2018/11/user-typing-on-laptop.jpg"
+                        alt="typing"
+                      />
+                      <div>
+                        <h3
+                          style={{
+                            marginBottom: rhythm(1 / 4),
+                          }}
+                        >
+                          <Link
+                            style={{ boxShadow: `none` }}
+                            to={`/blog${post.fields.slug}`}
+                          >
+                            {title}
+                          </Link>
+                        </h3>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              post.frontmatter.description || post.excerpt,
+                          }}
+                        />
+                        <Link className="post-link" to={`/blog${post.fields.slug}`}>
+                          Read Post &gt;&gt;
+                        </Link>
+                      </div>
+                    </div>
+                  </BlogListing>
+                  <hr />
+                </>
               )
             })}
             <Link to="/">
@@ -70,14 +95,10 @@ class Blog extends React.Component {
 
 export default Blog
 
-const BlogListContainer = styled.div`
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
-`
+const BlogListContainer = styled.div``
 
 const BlogListHero = styled.div`
-  height: 40vh;
+  height: 35vh;
   display: grid;
   grid-template-columns: 16.66% 16.66% 16.66% 16.66% auto auto;
   grid-template-rows: auto 33% 33%;
@@ -89,25 +110,72 @@ const BlogListHero = styled.div`
     background-color: #f26639;
   }
   h1 {
-      color: #f0ea49;
-      text-transform: uppercase;
-      font-style: italic;
-      font-size: 3.5vw;
-      grid-column: 2 / 5;
-      grid-row-start: 2;
-      margin: auto 0;
-    }
+    color: #f0ea49;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 3.5vw;
+    grid-column: 2 / 5;
+    grid-row-start: 2;
+    margin: auto 0;
+  }
   p {
     grid-column: 4 / 6;
     grid-row-start: 3;
     color: white;
     margin: auto 0;
-    font-size: 18px;
+    font-size: 1.25vw;
   }
 `
 
 const BlogList = styled.div`
-  grid-row-start: 2;
+  margin-top: 100px;
+  hr {
+    margin: 5% 25%;
+    height: 5px;
+    background-color: #f0ea49;
+  }
+`
+
+const BlogListing = styled.div`
+  display: grid;
+  grid-template-columns: 25% 50% 15%;
+  .date-tags {
+    grid-column-start: 1;
+    margin-right: 7%;
+    padding-left: 35%;
+    color: #ababab;
+    text-align: right;
+    font-style: italic;
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+  .teaser {
+    display: flex;
+    grid-column: 2 / span 2;
+    height: 100%;
+    div {
+      margin-left: 5%;
+    }
+    img {
+      width: 25%;
+      margin-bottom: 0;
+    }
+    h3 a {
+      margin-top: 0;
+      text-transform: uppercase;
+      color: #f04d4d;
+      font-style: italic;
+    }
+    .post-link {
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: none;
+      font-size: 1.5vh;
+      color: black;
+      font-weight: bold;
+    }
+  }
 `
 
 export const pageQuery = graphql`
