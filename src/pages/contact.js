@@ -12,7 +12,7 @@ const Contact = () => {
       <ContactMain>
         <ContactDescription>
           <p>
-            I'm currently available for fulltime and contract positions. Drop me a line and let's chat.
+            I'm currently available for fulltime and contract positions. <br />Drop me a line and let's chat.
           </p>
           <div className="icons">
             <a target="blank" href="https://twitter.com/HereCodesNothin"><FaTwitter className="icon" size="48" color="#ed4b64" /></a>

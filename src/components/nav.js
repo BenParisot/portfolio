@@ -9,13 +9,13 @@ const Nav = ({ location }) => {
     <NavMain>
       <SEO title={location} />
       <Link to="/developer">
-        <p>Development</p>
+        <p>Developer</p>
       </Link>
       <Link to="/designer">
-        <p>Design</p>
+        <p>Designer</p>
       </Link>
       <Link to="/producer">
-        <p>Production</p>
+        <p>Producer</p>
       </Link>
       <Link to="/blog/">
         <p>Blog</p>
@@ -38,7 +38,7 @@ const NavMain = styled.nav`
   z-index: 100;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 15px;
+  padding-right: 25px;
   background: linear-gradient(
     to right,
     #f04d4d 16.6%,

@@ -13,7 +13,7 @@ const CaseStudy = props => {
       </Image>
       <Description>
         <p>{description}</p>
-        <a>Learn More</a>
+        <a target="blank" href="google.com">Learn More</a>
       </Description>
     </CaseStudyContainer>
   )
@@ -42,6 +42,7 @@ const Title = styled.div`
 const Description = styled.div`
   grid-column: 1 / span 3;
   grid-row-start: 3;
+  padding-right: 1rem;
   a {
     margin-left: 20%;
     text-transform: uppercase;

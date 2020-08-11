@@ -66,7 +66,7 @@ const ProducerMain = styled.div`
   display: grid;
   padding-bottom: 50px;
   grid-template-columns: 16% 16% 16% 16% auto 16%;
-  grid-template-rows: 125px 165px 85px 5% 16%;
+  grid-template-rows: 125px 135px 85px 7% 16%;
 `
 
 const Description = styled.div`
