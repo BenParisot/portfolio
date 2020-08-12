@@ -19,7 +19,9 @@ class BlogPostTemplate extends React.Component {
         <BlogPostContainer>
           <Nav />
           <BlogPostHero>
-            <h1>{post.frontmatter.title}</h1>
+            <span>
+              <h1>{post.frontmatter.title}</h1>
+            </span>
           </BlogPostHero>
           <SEO
             title={post.frontmatter.title}
@@ -89,13 +91,15 @@ const BlogPostHero = styled.div`
   background-size: 100%;
   display: flex;
   align-items: center;
-  padding-left: 3rem;
+  padding-left: 16.6%;
   margin-bottom: 3rem;
   h1 {
     font-family: Montserrat, sans-serif;
     text-transform: uppercase;
     color: white;
-    font-size: 5rem;
+    font-size: 5vw;
+    padding: 20px;
+    background-color: rgba(240, 77, 77, 0.6);
   }
 `
 
