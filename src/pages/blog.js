@@ -1,15 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
+// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import Button from "../components/button"
 import Nav from "../components/nav"
-import styled, { keyframes } from "styled-components"
-import SectionTitle from "../components/sectionTitle"
-
+import styled from "styled-components"
 class Blog extends React.Component {
   render() {
     const { data } = this.props

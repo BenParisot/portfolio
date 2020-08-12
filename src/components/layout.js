@@ -3,9 +3,7 @@ import styled from "styled-components"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    // const rootPath = 'http://localhost:404/'
-    // const blogPath = 'http://localhost:404//blog'
+    const { children } = this.props
 
     return (
       <Wrapper>

@@ -1,4 +1,4 @@
-import React, { useCallback } from "react"
+import React from "react"
 import styled, { keyframes } from "styled-components"
 import SectionTitle from "../components/sectionTitle"
 import Gallery from "react-photo-gallery"
@@ -90,13 +90,6 @@ const Designer = () => {
       height: 2,
     },
   ]
-
-  const ImageRenderer = useCallback(({ key, photo }) => (
-    <Image
-      key={key}
-      photo={photo}
-    />
-  ))
 
   return (
     <>

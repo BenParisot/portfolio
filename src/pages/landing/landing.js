@@ -44,27 +44,27 @@ const Landing = () => {
       <CSSTransition in={inProp} timeout={1500} unmountOnExit>
         {state => (
           <Dev state={state}>
-            <h1 id="developer" onClick={handleOnClick}>
+            <DevelopH1 id="developer" onClick={handleOnClick}>
               Developer
-            </h1>
+            </DevelopH1>
           </Dev>
         )}
       </CSSTransition>
       <CSSTransition in={inProp} timeout={1500} unmountOnExit>
         {state => (
           <Design state={state}>
-            <h1 id="designer" onClick={handleOnClick}>
+            <DesignH1 id="designer" onClick={handleOnClick}>
               Designer
-            </h1>
+            </DesignH1>
           </Design>
         )}
       </CSSTransition>
       <CSSTransition in={inProp} timeout={1500} unmountOnExit>
         {state => (
           <Production state={state}>
-            <h1 id="producer" onClick={handleOnClick}>
+            <ProduceH1 id="producer" onClick={handleOnClick}>
               Producer
-            </h1>
+            </ProduceH1>
           </Production>
         )}
       </CSSTransition>
@@ -73,16 +73,16 @@ const Landing = () => {
           <Nav state={state}>
             <li>
               <span>
-                <p id="blog" onClick={handleOnClick}>
+                <NavP id="blog" onClick={handleOnClick}>
                   Blog
-                </p>
+                </NavP>
               </span>
             </li>
             <li>
               <span>
-                <p id="contact" onClick={handleOnClick}>
+                <NavP id="contact" onClick={handleOnClick}>
                   Contact
-                </p>
+                </NavP>
               </span>
             </li>
           </Nav>
@@ -228,6 +228,9 @@ const Design = styled.div`
       ? "translateY(100rem) rotate(180deg)"
       : ""};
 `
+const DevelopH1 = styled.h1``
+const DesignH1 = styled.h1``
+const ProduceH1 = styled.h1``
 
 const Production = styled.div`
   grid-column-start: 3;
@@ -282,4 +285,6 @@ const Nav = styled.ul`
   opacity: ${({ state }) =>
     state === "exiting" || state === "exited" ? 0 : 100};
 `
+const NavP = styled.p``
+
 export default Landing

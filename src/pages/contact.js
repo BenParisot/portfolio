@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components"
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa"
 import Nav from "../components/nav"
 import Footer from "../components/footer"
-import { fadeIn } from 'react-animations'
+import { fadeIn } from "react-animations"
 
 const Contact = () => {
   return (
@@ -12,24 +12,25 @@ const Contact = () => {
       <ContactMain>
         <ContactDescription>
           <p>
-            I'm currently available for fulltime and contract positions. <br />Drop me a line and let's chat.
+            I'm currently available for fulltime and contract positions. <br />
+            Drop me a line and let's chat.
           </p>
           <div className="icons">
-            <a target="blank" href="https://twitter.com/HereCodesNothin"><FaTwitter className="icon" size="48" color="#ed4b64" /></a>
-            <a target="blank" href="https://www.linkedin.com/in/benparisot/"><FaLinkedin className="icon" size="48" color="#f04d4d" /></a>
-            <a target="blank" href="https://github.com/benparisot"><FaGithub className="icon" size="48" color="#F26639" /></a>
+            <a target="blank" href="https://twitter.com/HereCodesNothin">
+              <FaTwitter className="icon" size="48" color="#ed4b64" />
+            </a>
+            <a target="blank" href="https://www.linkedin.com/in/benparisot/">
+              <FaLinkedin className="icon" size="48" color="#f04d4d" />
+            </a>
+            <a target="blank" href="https://github.com/benparisot">
+              <FaGithub className="icon" size="48" color="#F26639" />
+            </a>
           </div>
         </ContactDescription>
         <ContactForm>
-          <label>
-            <FormInput type="text" placeholder="Name" />
-          </label>
-          <label>
-            <FormInput type="email" placeholder="Email Address" />
-          </label>
-          <label>
-            <FormInput type="textarea" placeholder="Your Message" />
-          </label>
+          <FormInput type="text" placeholder="Name" />
+          <FormInput type="email" placeholder="Email Address" />
+          <FormInput type="textarea" placeholder="Your Message" />
           <FormButton type="submit" />
         </ContactForm>
       </ContactMain>
@@ -38,7 +39,7 @@ const Contact = () => {
   )
 }
 
-const fadeInAnimation = keyframes`${fadeIn}`;
+const fadeInAnimation = keyframes`${fadeIn}`
 
 const ContactMain = styled.div`
   animation: 1s ${fadeInAnimation};
