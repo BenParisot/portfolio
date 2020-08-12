@@ -13,7 +13,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-
+    console.log('post', post)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <BlogPostContainer>
@@ -38,6 +38,7 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.date}
               <br />
+              {post.frontmatter.keywords.map(keyword => `${keyword}, `)}
               coding, management philosophy, technical projects, project
               management
             </p>
