@@ -6,7 +6,7 @@ module.exports = {
     description: `Ben Parisot is a design-driven full stack developer working mostly in JavaScript, React, Node, TypeScript, and GraphQL. Mostly.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `gatsbyjs`,
+      twitter: `herecodesnothin`,
     },
   },
   plugins: [

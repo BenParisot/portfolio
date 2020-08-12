@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import Nav from "../components/nav"
 import styled from "styled-components"
+import Footer from '../components/footer'
 class Blog extends React.Component {
   render() {
     const { data } = this.props
@@ -82,6 +83,7 @@ class Blog extends React.Component {
             })}
           </BlogList>
         </BlogListContainer>
+        <Footer />
       </Layout>
     )
   }
