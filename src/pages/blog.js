@@ -158,7 +158,7 @@ const BlogListing = styled.div`
       width: 25%;
       margin-bottom: 0;
     }
-    h3 a {
+    h3, h3 a {
       font-family: Montserrat, sans-serif;
       margin-top: 0;
       text-transform: uppercase;
@@ -170,7 +170,6 @@ const BlogListing = styled.div`
       font-family: Montserrat, sans-serif;
       text-transform: uppercase;
       text-decoration: none;
-      box-shadow: none;
       font-size: 1.5vh;
       color: black;
       font-weight: bold;

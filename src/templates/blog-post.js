@@ -42,37 +42,35 @@ class BlogPostTemplate extends React.Component {
             <div className="post-body">
               <MDXRenderer className="post-body">{post.body}</MDXRenderer>
             </div>
-            <hr
-              style={{
-                marginBottom: rhythm(1),
-              }}
-            />
-            <Bio />
-
-            <ul
-              style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `space-between`,
-                listStyle: `none`,
-                padding: 0,
-              }}
-            >
-              <li>
-                {previous && (
-                  <Link to={`/blog${previous.fields.slug}`} rel="prev">
-                    ← {previous.frontmatter.title}
-                  </Link>
-                )}
-              </li>
-              <li>
-                {next && (
-                  <Link to={`/blog${next.fields.slug}`} rel="next">
-                    {next.frontmatter.title} →
-                  </Link>
-                )}
-              </li>
-            </ul>
+            <div className="bio">
+              <Bio />
+            </div>
+            <div className="post-nav">
+              <ul
+                style={{
+                  display: `flex`,
+                  flexWrap: `wrap`,
+                  justifyContent: `space-between`,
+                  listStyle: `none`,
+                  padding: 0,
+                }}
+              >
+                <li>
+                  {previous && (
+                    <Link to={`/blog${previous.fields.slug}`} rel="prev">
+                      ← {previous.frontmatter.title}
+                    </Link>
+                  )}
+                </li>
+                <li>
+                  {next && (
+                    <Link to={`/blog${next.fields.slug}`} rel="next">
+                      {next.frontmatter.title} →
+                    </Link>
+                  )}
+                </li>
+              </ul>
+            </div>
           </BlogPostArea>
         </BlogPostContainer>
       </Layout>
@@ -88,11 +86,17 @@ const BlogPostHero = styled.div`
   height: 35vh;
   background: url(https://images.unsplash.com/photo-1580894908361-967195033215?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 100%;
   display: flex;
   align-items: center;
   padding-left: 3rem;
   margin-bottom: 3rem;
+  h1 {
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 5rem;
+  }
 `
 
 const BlogPostArea = styled.div`
@@ -100,8 +104,8 @@ const BlogPostArea = styled.div`
   grid-template-columns: 25% 50% 15%;
   .date-tags {
     grid-column-start: 1;
-    margin-right: 7%;
-    padding-left: 35%;
+    margin-right: 15%;
+    padding-left: 25%;
     color: #ababab;
     text-align: right;
     font-style: italic;
@@ -112,6 +116,23 @@ const BlogPostArea = styled.div`
   .post-body {
     grid-column-start: 2;
     padding-right: 4rem;
+    blockquote {
+      margin-left: 1em;
+    }
+  }
+  .post-nav {
+    margin-top: 25px;
+    grid-column-start: 2;
+    a {
+      font-family: Montserrat, sans-serif;
+      text-transform: uppercase;
+      color: #f04d4d;
+      font-weight: bold;
+    }
+  }
+  .bio {
+    grid-row-start: 1;
+    grid-column-start: 3;
   }
 `
 
