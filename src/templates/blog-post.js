@@ -86,17 +86,32 @@ const BlogPostContainer = styled.div`
 
 const BlogPostHero = styled.div`
   height: 35vh;
-  background-color: green;
+  background: url(https://images.unsplash.com/photo-1580894908361-967195033215?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  background-repeat: no-repeat;
+  background-size: auto;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  margin-bottom: 3rem;
 `
 
 const BlogPostArea = styled.div`
   display: grid;
-  grid-template-columns: 25% auto;
+  grid-template-columns: 25% 50% 15%;
   .date-tags {
     grid-column-start: 1;
+    margin-right: 7%;
+    padding-left: 35%;
+    color: #ababab;
+    text-align: right;
+    font-style: italic;
+    p {
+      margin-bottom: 1rem;
+    }
   }
   .post-body {
     grid-column-start: 2;
+    padding-right: 4rem;
   }
 `
 
