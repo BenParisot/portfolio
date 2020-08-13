@@ -13,12 +13,12 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    console.log('post', post)
+    console.log("post", post)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <BlogPostContainer>
           <Nav />
-          <BlogPostHero>
+          <BlogPostHero post={post}>
             <span>
               <h1>{post.frontmatter.title}</h1>
             </span>
@@ -38,9 +38,7 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.date}
               <br />
-              {post.frontmatter.keywords.map(keyword => `${keyword}, `)}
-              coding, management philosophy, technical projects, project
-              management
+              {post.frontmatter.keywords?.map(keyword => `${keyword}, `)}
             </p>
             <div className="post-body">
               <MDXRenderer className="post-body">{post.body}</MDXRenderer>
@@ -87,7 +85,7 @@ const BlogPostContainer = styled.div`
 
 const BlogPostHero = styled.div`
   height: 35vh;
-  background: url(https://images.unsplash.com/photo-1580894908361-967195033215?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  background: ${props => `url${props.post.frontmatter.heroImage}`};
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
@@ -159,6 +157,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        keywords
       }
     }
   }

@@ -7,86 +7,88 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import Nav from "../components/nav"
 import styled from "styled-components"
-import Footer from '../components/footer'
-class Blog extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMdx.edges
-    const datedPosts = posts.map(({ node }) => ({
-      ...node,
-      date: new Date(node.frontmatter.date),
-    }))
-    const sortedPosts = datedPosts.sort((a, b) => b.date - a.date)
-    console.log("sorted posts", sortedPosts)
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <BlogListContainer>
-          <Nav />
-          <BlogListHero>
-            <div></div>
-            <h1>Here Codes Nothing!</h1>
-            <p>A blog about creative coding, design, and trying new things.</p>
-          </BlogListHero>
-          <SEO title="All posts" />
-          {/* <Bio /> */}
-          <BlogList>
-            {sortedPosts.map(post => {
-              const title = post.frontmatter.title || post.fields.slug
-              return (
-                <>
-                  <BlogListing key={post.fields.slug}>
-                    <div className="date-tags">
-                      <p>
-                        <small>{post.frontmatter.date}</small>
-                      </p>
-                      <p>
-                        <small>
-                          coding, management philosophy, technical projects,
-                          project management
-                        </small>
-                      </p>
-                    </div>
-                    <div className="teaser">
-                      <img
-                        src="https://cdn.windowsreport.com/wp-content/uploads/2018/11/user-typing-on-laptop.jpg"
-                        alt="typing"
-                      />
-                      <div>
-                        <h3
-                          style={{
-                            marginBottom: rhythm(1 / 4),
-                          }}
+import Footer from "../components/footer"
+const Blog = ({ data }) => {
+  // const { data } = props
+  console.log('data', data)
+  const siteTitle = data.site.siteMetadata.title
+  const posts = data.allMdx.edges
+  const datedPosts = posts.map(({ node }) => ({
+    ...node,
+    date: new Date(node.frontmatter.date),
+  }))
+  const sortedPosts = datedPosts.sort((a, b) => b.date - a.date)
+  console.log("sorted posts", sortedPosts)
+  return (
+    <Layout location={this.props.location} title={siteTitle}>
+      <BlogListContainer>
+        <Nav />
+        <BlogListHero>
+          <div></div>
+          <h1>Here Codes Nothing!</h1>
+          <p>A blog about creative coding, design, and trying new things.</p>
+        </BlogListHero>
+        <SEO title="All posts" />
+        {/* <Bio /> */}
+        <BlogList>
+          {sortedPosts.map(post => {
+            const title = post.frontmatter.title || post.fields.slug
+            return (
+              <>
+                <BlogListing key={post.fields.slug}>
+                  <div className="date-tags">
+                    <p>
+                      <small>{post.frontmatter.date}</small>
+                    </p>
+                    <p>
+                      <small>
+                        {post.frontmatter.keywords?.map(
+                          keyword => `${keyword}, `
+                        )}
+                      </small>
+                    </p>
+                  </div>
+                  <div className="teaser">
+                    <img
+                      src="https://cdn.windowsreport.com/wp-content/uploads/2018/11/user-typing-on-laptop.jpg"
+                      alt="typing"
+                    />
+                    <div>
+                      <h3
+                        style={{
+                          marginBottom: rhythm(1 / 4),
+                        }}
+                      >
+                        <Link
+                          style={{ boxShadow: `none` }}
+                          to={`/blog${post.fields.slug}`}
                         >
-                          <Link
-                            style={{ boxShadow: `none` }}
-                            to={`/blog${post.fields.slug}`}
-                          >
-                            {title}
-                          </Link>
-                        </h3>
-                        <p
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              post.frontmatter.description || post.excerpt,
-                          }}
-                        />
-                        <Link className="post-link" to={`/blog${post.fields.slug}`}>
-                          Read Post &gt;&gt;
+                          {title}
                         </Link>
-                      </div>
+                      </h3>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: post.frontmatter.description || post.excerpt,
+                        }}
+                      />
+                      <Link
+                        className="post-link"
+                        to={`/blog${post.fields.slug}`}
+                      >
+                        Read Post &gt;&gt;
+                      </Link>
                     </div>
-                  </BlogListing>
-                  <hr />
-                </>
-              )
-            })}
-          </BlogList>
-        </BlogListContainer>
-        <Footer />
-      </Layout>
-    )
-  }
+                  </div>
+                </BlogListing>
+                <hr />
+              </>
+            )
+          })}
+        </BlogList>
+      </BlogListContainer>
+      <Footer />
+    </Layout>
+  )
 }
 
 export default Blog
@@ -157,7 +159,8 @@ const BlogListing = styled.div`
       width: 25%;
       margin-bottom: 0;
     }
-    h3, h3 a {
+    h3,
+    h3 a {
       font-family: Montserrat, sans-serif;
       margin-top: 0;
       text-transform: uppercase;
@@ -194,6 +197,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            keywords
           }
         }
       }
