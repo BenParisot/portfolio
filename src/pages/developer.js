@@ -72,12 +72,12 @@ const DeveloperMain = styled.div`
 `
 
 const Description = styled.div`
-  animation: 1.5s ${fadeInAnimation};
+  animation: 2.5s ${fadeInAnimation};
   grid-column: 3 / span 3;
   grid-row-start: 4;
 `
 const CaseStudies = styled.div`
-  animation: 1s ${slideInUpAnimation};
+  animation: 2s ${slideInUpAnimation};
   grid-column: 2 / span 4;
   grid-row-start: 5;
   h3 {

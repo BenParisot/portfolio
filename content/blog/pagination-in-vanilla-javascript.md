@@ -3,6 +3,8 @@ path: pagination-in-vanilla-javascript
 date: 2020-08-03T15:18:44.764Z
 title: Pagination in Vanilla JavaScript
 description: Let's paginate using only vanilla JavaScript!
+keywords: [DOM manipulation, paging, vanilla javascript, html, javascript]
+heroImage: 'content/assets/woman-computer.jpeg'
 ---
 Welcome back to Here Codes Nothing! Today we're going to work through pagination using only vanilla JavaScript. What fun!
 

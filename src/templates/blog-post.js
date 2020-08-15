@@ -19,9 +19,7 @@ class BlogPostTemplate extends React.Component {
         <BlogPostContainer>
           <Nav />
           <BlogPostHero post={post}>
-            <span>
-              <h1>{post.frontmatter.title}</h1>
-            </span>
+            <h1>{post.frontmatter.title}</h1>
           </BlogPostHero>
           <SEO
             title={post.frontmatter.title}
@@ -85,7 +83,7 @@ const BlogPostContainer = styled.div`
 
 const BlogPostHero = styled.div`
   height: 35vh;
-  background: ${props => `url${props.post.frontmatter.heroImage}`};
+  background: url('content/assets/woman-computer.jpeg');
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
@@ -158,6 +156,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         keywords
+        heroImage
       }
     }
   }

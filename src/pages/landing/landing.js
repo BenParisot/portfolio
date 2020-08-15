@@ -2,8 +2,9 @@ import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
 import { navigate } from "gatsby"
 import { fadeIn, slideInRight } from "react-animations"
-import SEO from '../../components/seo'
+import SEO from "../../components/seo"
 import { CSSTransition } from "react-transition-group"
+import { respondTo } from "../../styling/respondTo"
 
 const Landing = () => {
   const [inProp, setInProp] = useState(true)
@@ -101,15 +102,68 @@ const Background = styled.div`
   grid-template-rows: 16% 16% auto 16% 16% 16%;
   width: 100vw;
   height: 100vh;
+
+  ${respondTo.xs` 
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% auto;
+`}
 `
 const BackgroundDivOne = styled.div`
   grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: span 6;
+  transition: 0.25s;
+  height: ${({ state }) =>
+    state === "exiting" || state === "exited" ? "42px" : "100%"};
+
+${respondTo.xs` 
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  transition: .5s;
+  width: ${({ state }) =>
+    state === "exiting" || state === "exited" ? "0px" : "100%"};
+`}
+
+${respondTo.sm` 
+  grid-row-start: 1;
+  grid-row-end: span 6;
+  background-color: red;
+  transition: 0.25s;
+  height: ${({ state }) =>
+    state === "exiting" || state === "exited" ? "42px" : "100%"};
+
+`}
+${respondTo.md` 
+  grid-row-start: 1;
+  grid-row-end: span 6;
+  background-color: blue;
+  transition: 0.25s;
+  height: ${({ state }) =>
+    state === "exiting" || state === "exited" ? "42px" : "100%"};
+
+`}
+${respondTo.lg` 
   grid-row-start: 1;
   grid-row-end: span 6;
   background-color: #f04d4d;
   transition: 0.25s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
+
+`}
+  background-color: #f04d4d;
+
+  /* grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: span 6;
+  background-color: #f04d4d; */
+  /* ${respondTo.xs` 
+    background-color: black;
+  `} */
+  /* transition: 0.25s;
+  height: ${({ state }) =>
+    state === "exiting" || state === "exited" ? "42px" : "100%"}; */
 `
 const BackgroundDivTwo = styled.div`
   grid-column-start: 2;
@@ -119,6 +173,14 @@ const BackgroundDivTwo = styled.div`
   transition: 0.5s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
+
+  ${respondTo.xs` 
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    transition: 2s;
+    width: ${({ state }) =>
+      state === "exiting" || state === "exited" ? "0px" : "100%"};
+  `}
 `
 
 const BackgroundDivThree = styled.div`
@@ -129,6 +191,10 @@ const BackgroundDivThree = styled.div`
   transition: 0.75s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
+  ${respondTo.xs` 
+    grid-column: 1 / span 2;
+    grid-row: 3;
+  `}
 `
 
 const BackgroundDivFour = styled.div`
@@ -139,6 +205,10 @@ const BackgroundDivFour = styled.div`
   transition: 1s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
+  ${respondTo.xs` 
+    grid-column: 1 / span 2;
+    grid-row: 4;
+  `}
 `
 
 const BackgroundDivFive = styled.div`
@@ -149,6 +219,10 @@ const BackgroundDivFive = styled.div`
   transition: 1.25s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
+  ${respondTo.xs` 
+    grid-column: 1 / span 2;
+    grid-row: 5;
+  `}
 `
 
 const BackgroundDivSix = styled.div`
@@ -159,6 +233,10 @@ const BackgroundDivSix = styled.div`
   transition: 1.5s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
+  ${respondTo.xs` 
+    grid-column: 1 / span 2;
+    grid-row: 6;
+  `}
 `
 
 const Slogan = styled.div`
@@ -175,6 +253,14 @@ const Slogan = styled.div`
   transition: 2s;
   transform: ${({ state }) =>
     state === "exiting" || state === "exited" ? "translateX(100rem)" : ""};
+  ${respondTo.xs`
+    margin-left: 10%;
+    grid-column: 1 / span 2;
+    width: 85%;
+    h1 {
+      font-size: 45px;
+    }
+  `}
 `
 
 const Dev = styled.div`
@@ -201,6 +287,22 @@ const Dev = styled.div`
     state === "exiting" || state === "exited"
       ? "translateY(100rem) rotate(180deg)"
       : ""};
+  ${respondTo.xs`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    grid-column: 1 / 3;
+    grid-row: 3;
+    transform: none;
+    h1 {
+      border-right: 10px solid #f0ea49;
+      border-top: none;
+      writing-mode: horizontal-tb;
+      font-size: 36px;
+      padding: 0px 15px;
+      margin: 0px;
+    }
+  `}
 `
 
 const Design = styled.div`
@@ -227,6 +329,22 @@ const Design = styled.div`
     state === "exiting" || state === "exited"
       ? "translateY(100rem) rotate(180deg)"
       : ""};
+  ${respondTo.xs`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    grid-column: 1 / 3;
+    grid-row: 4;
+    transform: none;
+    h1 {
+      border-right: 10px solid white;
+      border-top: none;
+      writing-mode: horizontal-tb;
+      font-size: 36px;
+      padding: 0px 15px;
+      margin: 0px;
+    }
+  `}
 `
 const DevelopH1 = styled.h1``
 const DesignH1 = styled.h1``
@@ -256,35 +374,52 @@ const Production = styled.div`
     state === "exiting" || state === "exited"
       ? "translateY(100rem) rotate(180deg)"
       : ""};
+  ${respondTo.xs`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    grid-column: 1 / 3;
+    grid-row: 5;
+    transform: none;
+    h1 {
+      border-right: 10px solid #f0ea49;
+      border-top: none;
+      writing-mode: horizontal-tb;
+      font-size: 36px;
+      padding: 0px 15px;
+      margin: 0px;
+    }
+  `}
 `
 
 const Nav = styled.ul`
   grid-column-start: 6;
   grid-row-start: 6;
   align-items: center;
+  list-style: none;
   li {
     font-size: 1.5vw;
-    list-style: none;
-
     span {
       margin-bottom: 15px;
       padding-bottom: 3px;
-      p {
-        width: 35%;
-        border-bottom: 5px solid white;
-        color: #d6ffb7;
-        font-style: italic;
-        :hover {
-          cursor: pointer;
-        }
-      }
     }
   }
   animation: 3s ${fadeInAnimation};
   transition: 2s;
   opacity: ${({ state }) =>
     state === "exiting" || state === "exited" ? 0 : 100};
-`
-const NavP = styled.p``
 
+  ${respondTo.xs`
+    display: none;
+  `}
+`
+const NavP = styled.p`
+  width: 35%;
+  border-bottom: 5px solid white;
+  color: #d6ffb7;
+  font-style: italic;
+  :hover {
+    cursor: pointer;
+  }
+`
 export default Landing
