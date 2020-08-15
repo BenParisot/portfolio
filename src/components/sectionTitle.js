@@ -28,7 +28,7 @@ const Title = styled.h1`
   ${respondTo.xs`
     grid-row: 1
     font-size: 36px;
-    margin-top: 25px;
+    margin-top: 35px;
   `}
 
 `

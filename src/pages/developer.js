@@ -5,6 +5,7 @@ import SectionTitle from "../components/sectionTitle"
 import CaseStudy from "./case-study/caseStudy"
 import Footer from "../components/footer"
 import { fadeIn, slideInUp } from 'react-animations'
+import { respondTo } from '../styling/respondTo'
 
 const Developer = (props) => {
   const title = `Ben Parisot, Full Stack Dev`
@@ -75,6 +76,10 @@ const Description = styled.div`
   animation: 2.5s ${fadeInAnimation};
   grid-column: 3 / span 3;
   grid-row-start: 4;
+  ${respondTo.xs`
+    grid-column: 2 / span 4;
+    grid-row: 3;
+  `}
 `
 const CaseStudies = styled.div`
   animation: 2s ${slideInUpAnimation};
