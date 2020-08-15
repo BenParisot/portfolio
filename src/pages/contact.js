@@ -4,6 +4,7 @@ import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa"
 import Nav from "../components/nav"
 import Footer from "../components/footer"
 import { fadeIn } from "react-animations"
+import { respondTo } from "../styling/respondTo"
 
 const Contact = () => {
   return (
@@ -34,7 +35,9 @@ const Contact = () => {
           <FormButton type="submit" />
         </ContactForm>
       </ContactMain>
-      <Footer />
+      <FooterContainer>
+        <Footer />
+      </FooterContainer>
     </>
   )
 }
@@ -50,6 +53,12 @@ const ContactMain = styled.div`
   padding-right: 15%;
   justify-content: center;
   align-items: center;
+  ${respondTo.xs`
+    flex-direction: column;
+    padding: 0px;
+    // justify-content: flex-start;
+    // margin-top: 45px;
+  `}
 `
 
 const ContactDescription = styled.div`
@@ -65,12 +74,23 @@ const ContactDescription = styled.div`
       box-shadow: none;
     }
   }
+  ${respondTo.xs`
+    width: 100%;
+    text-align: center;
+    .icons {
+      width: 100%;
+      justify-content: space-around;
+    } 
+  `}
 `
 
 const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 35%;
+  ${respondTo.xs`
+    width: 80%;
+  `}
 `
 
 const FormInput = styled.input`
@@ -94,6 +114,12 @@ const FormButton = styled.input`
     background-color: #f04d4d;
     color: white;
   }
+`
+
+const FooterContainer = styled.div`
+  ${respondTo.xs`
+    display: none;
+  `}
 `
 
 export default Contact
