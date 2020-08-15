@@ -5,6 +5,7 @@ import Gallery from "react-photo-gallery"
 import Nav from "../components/nav"
 import Footer from "../components/footer"
 import { fadeIn, slideInUp } from "react-animations"
+import { respondTo } from '../styling/respondTo'
 
 const Designer = () => {
   const title = `Ben Parisot, Digital Designer`
@@ -155,6 +156,10 @@ const Description = styled.div`
   animation: 1.5s ${fadeInAnimation};
   grid-column: 3 / span 3;
   grid-row-start: 4;
+  ${respondTo.xs`
+    grid-column: 2 / span 4;
+    grid-row: 3;
+  `}
 `
 
 const Portfolio = styled.div`
