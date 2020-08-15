@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { respondTo } from '../../styling/respondTo'
 
 const CaseStudy = props => {
   const { title, description, imgUrl } = props
@@ -23,6 +24,11 @@ const CaseStudyContainer = styled.div`
   display: grid;
   grid-template-columns: 10% 30% 5% 55%;
   grid-template-rows: 10% 15% 10% 65%;
+  ${respondTo.xs`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 85px;
+  `}
 `
 
 const Title = styled.div`
@@ -37,6 +43,10 @@ const Title = styled.div`
     text-transform: uppercase;
     margin: 0;
   }
+  ${respondTo.xs`
+    width: 100%;
+    height: 60px;
+  `}
 `
 
 const Description = styled.div`
@@ -47,6 +57,12 @@ const Description = styled.div`
     margin-left: 20%;
     text-transform: uppercase;
   }
+  ${respondTo.xs`
+    a {
+      margin: 0px;
+    }
+    text-align: center;
+    `}
 `
 
 const Image = styled.div`
