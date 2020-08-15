@@ -113,57 +113,18 @@ const BackgroundDivOne = styled.div`
   grid-column-start: 1;
   grid-row-start: 1;
   grid-row-end: span 6;
+  background-color: #f04d4d;
   transition: 0.25s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
-
-${respondTo.xs` 
+  ${respondTo.xs` 
   grid-column: 1 / span 2;
   grid-row: 1;
   transition: .5s;
+  height: 100%;
   width: ${({ state }) =>
     state === "exiting" || state === "exited" ? "0px" : "100%"};
 `}
-
-${respondTo.sm` 
-  grid-row-start: 1;
-  grid-row-end: span 6;
-  background-color: red;
-  transition: 0.25s;
-  height: ${({ state }) =>
-    state === "exiting" || state === "exited" ? "42px" : "100%"};
-
-`}
-${respondTo.md` 
-  grid-row-start: 1;
-  grid-row-end: span 6;
-  background-color: blue;
-  transition: 0.25s;
-  height: ${({ state }) =>
-    state === "exiting" || state === "exited" ? "42px" : "100%"};
-
-`}
-${respondTo.lg` 
-  grid-row-start: 1;
-  grid-row-end: span 6;
-  background-color: #f04d4d;
-  transition: 0.25s;
-  height: ${({ state }) =>
-    state === "exiting" || state === "exited" ? "42px" : "100%"};
-
-`}
-  background-color: #f04d4d;
-
-  /* grid-column-start: 1;
-  grid-row-start: 1;
-  grid-row-end: span 6;
-  background-color: #f04d4d; */
-  /* ${respondTo.xs` 
-    background-color: black;
-  `} */
-  /* transition: 0.25s;
-  height: ${({ state }) =>
-    state === "exiting" || state === "exited" ? "42px" : "100%"}; */
 `
 const BackgroundDivTwo = styled.div`
   grid-column-start: 2;
@@ -177,9 +138,10 @@ const BackgroundDivTwo = styled.div`
   ${respondTo.xs` 
     grid-column: 1 / span 2;
     grid-row: 2;
-    transition: 2s;
+    transition: .75s;
+    height: 100%;
     width: ${({ state }) =>
-      state === "exiting" || state === "exited" ? "0px" : "100%"};
+    state === "exiting" || state === "exited" ? "0px" : "100%"};
   `}
 `
 
@@ -194,6 +156,10 @@ const BackgroundDivThree = styled.div`
   ${respondTo.xs` 
     grid-column: 1 / span 2;
     grid-row: 3;
+    transition: 1s;
+    height: 100%;
+    width: ${({ state }) =>
+    state === "exiting" || state === "exited" ? "0px" : "100%"};
   `}
 `
 
@@ -208,6 +174,10 @@ const BackgroundDivFour = styled.div`
   ${respondTo.xs` 
     grid-column: 1 / span 2;
     grid-row: 4;
+    transition: 1.25s;
+    height: 100%;
+    width: ${({ state }) =>
+    state === "exiting" || state === "exited" ? "0px" : "100%"};
   `}
 `
 
@@ -222,6 +192,10 @@ const BackgroundDivFive = styled.div`
   ${respondTo.xs` 
     grid-column: 1 / span 2;
     grid-row: 5;
+    transition: 1.5s;
+    height: 100%;
+    width: ${({ state }) =>
+    state === "exiting" || state === "exited" ? "0px" : "100%"};
   `}
 `
 
@@ -236,6 +210,10 @@ const BackgroundDivSix = styled.div`
   ${respondTo.xs` 
     grid-column: 1 / span 2;
     grid-row: 6;
+    transition: 1.75s;
+    height: 100%;
+    width: ${({ state }) =>
+    state === "exiting" || state === "exited" ? "0px" : "100%"};
   `}
 `
 
@@ -302,6 +280,11 @@ const Dev = styled.div`
       padding: 0px 15px;
       margin: 0px;
     }
+    transition: 2s;
+    transform: ${({ state }) =>
+    state === "exiting" || state === "exited"
+      ? "translateY(100rem)"
+      : ""};
   `}
 `
 
@@ -344,6 +327,11 @@ const Design = styled.div`
       padding: 0px 15px;
       margin: 0px;
     }
+    transition: 2s;
+    transform: ${({ state }) =>
+    state === "exiting" || state === "exited"
+      ? "translateY(100rem)"
+      : ""};
   `}
 `
 const DevelopH1 = styled.h1``
@@ -389,6 +377,11 @@ const Production = styled.div`
       padding: 0px 15px;
       margin: 0px;
     }
+    transition: 2s;
+    transform: ${({ state }) =>
+    state === "exiting" || state === "exited"
+      ? "translateY(100rem)"
+      : ""};
   `}
 `
 

@@ -1,11 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled, { keyframes } from "styled-components"
-import { fadeIn } from "react-animations"
+import styled from "styled-components"
 import SEO from "../components/seo"
- 
+import { respondTo } from "../styling/respondTo"
+
 const Nav = ({ location }) => {
   return (
+    <>
     <NavMain>
       <SEO title={location} />
       <Link to="/developer">
@@ -24,10 +25,9 @@ const Nav = ({ location }) => {
         <p>Contact</p>
       </Link>
     </NavMain>
+    </>
   )
 }
-
-const fadeInAnimation = keyframes`${fadeIn}`
 
 const NavMain = styled.nav`
   height: 42px;
@@ -53,7 +53,6 @@ const NavMain = styled.nav`
     #f04d4d 83%
   );
   p {
-    /* animation: 1s ${fadeInAnimation}; */
     color: #f7f195;
     margin: auto 20px;
     font-style: italic;
@@ -61,6 +60,25 @@ const NavMain = styled.nav`
   a {
     box-shadow: none;
   }
+  ${respondTo.xs`
+    position: fixed;
+    // display: grid;
+    // grid-template-columns: 20% 20% 20% 20% 20%;
+    // grid-template-rows: 100%;
+    display: flex;
+    justify-content: space-around;
+    max-width: 100vw;
+    bottom: 0;
+    background: #ed4b64;
+    height: 75px;
+    padding: 0px;
+    p {
+      font-size: 12px;
+      text-align: center;
+      width: 100%;
+      margin: 0px;
+    }
+  `}
 `
 
 export default Nav
