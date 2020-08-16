@@ -1,13 +1,14 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-// import Bio from "../components/bio"
+import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import Nav from "../components/nav"
 import styled from "styled-components"
 import Footer from "../components/footer"
+import { respondTo } from "../styling/respondTo"
 
 class Blog extends React.Component {
   render() {
@@ -29,11 +30,11 @@ class Blog extends React.Component {
             <p>A blog about creative coding, design, and trying new things.</p>
           </BlogListHero>
           <SEO title="All posts" />
-          {/* <Bio /> */}
+          <Bio />
           <BlogList>
             {sortedPosts.map(post => {
               const title = post.frontmatter.title || post.fields.slug
-              console.log('post', post)
+              console.log("post", post)
               return (
                 <>
                   <BlogListing key={post.fields.slug}>
@@ -108,7 +109,7 @@ const BlogListHero = styled.div`
   div {
     grid-column: 1 / 3;
     grid-row-start: 2;
-    background-color: #f26639;
+    background-color: #ed4b64;
   }
   h1 {
     color: #f0ea49;
@@ -126,6 +127,28 @@ const BlogListHero = styled.div`
     margin: auto 0;
     font-size: 1.25vw;
   }
+  ${respondTo.xs`
+    height: 200px;
+    div {
+      grid-row: 1 / span 2;
+      grid-column: 1 / span 4;
+    }
+    h1 {
+      grid-row: 2;
+      grid-column: 2 / span 4
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    p {
+      grid-column: 3 / span 3;
+      font-size: 16px;
+      background-color: #f0ea49;
+      padding: 5px 15px;
+      margin-top: 30px;
+      color: black;
+      font-style: italic;
+    }
+  `}
 `
 
 const BlogList = styled.div`
@@ -134,12 +157,19 @@ const BlogList = styled.div`
     margin: 5% 25%;
     height: 5px;
     background-color: #f0ea49;
+    ${respondTo.xs`
+    margin: 15% 25%;
+  `}
   }
 `
 
 const BlogListing = styled.div`
   display: grid;
   grid-template-columns: 25% 50% 15%;
+  ${respondTo.xs`
+    grid-template-rows: 50% 50%;
+    padding-left: 25px;
+  `}
   .date-tags {
     grid-column-start: 1;
     margin-right: 7%;
@@ -150,6 +180,9 @@ const BlogListing = styled.div`
     p {
       margin-bottom: 1rem;
     }
+    ${respondTo.xs`
+      display: none;
+    `}
   }
   .teaser {
     display: flex;
@@ -161,6 +194,10 @@ const BlogListing = styled.div`
     img {
       width: 25%;
       margin-bottom: 0;
+      ${respondTo.xs`
+        width: 80px;
+        height: 80px;
+      `}
     }
     h3,
     h3 a {
@@ -179,11 +216,14 @@ const BlogListing = styled.div`
       color: black;
       font-weight: bold;
     }
+    ${respondTo.xs`
+      grid-column: 1 / span 3;
+    `}
   }
 `
 
 export const pageQuery = graphql`
-  query BlogListQuery{
+  query BlogListQuery {
     site {
       siteMetadata {
         title
