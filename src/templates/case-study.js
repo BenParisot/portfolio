@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 // import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
-import Nav from "../../components/nav"
+import Nav from "../components/nav"
 
 const CaseStudyDetail = (props) => {
   // const study = this.props.data.mdx
@@ -22,7 +22,7 @@ const CaseStudyDetailContainer = styled.div``
 export default CaseStudyDetail
 
 export const pageQuery = graphql`
-  query CaseStudyBySlug($slug: String! ) {
+  query CaseStudy($slug: String! ) {
     site {
       siteMetadata {
         title

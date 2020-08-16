@@ -4,12 +4,16 @@ import styled from "styled-components"
 import { respondTo } from '../../styling/respondTo'
 
 const CaseStudy = props => {
-  const { title, description, imgUrl } = props
+  const { title, description, imgUrl, linkUrl } = props
   return (
     <CaseStudyContainer>
       <Title>
-       <Link to="test"><h4>{title}</h4>
-       </Link> 
+      <Link
+        // className="post-link"
+        to={`/${linkUrl}`}
+                        >
+        {title}
+      </Link>
       </Title>
       <Image>
         <img src={imgUrl} alt={title} />

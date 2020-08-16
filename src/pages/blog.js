@@ -60,7 +60,7 @@ class Blog extends React.Component {
                         >
                           <Link
                             style={{ boxShadow: `none` }}
-                            to={`/blog${post.fields.slug}`}
+                            to={`${post.fields.slug}`}
                           >
                             {title}
                           </Link>
@@ -73,7 +73,7 @@ class Blog extends React.Component {
                         />
                         <Link
                           className="post-link"
-                          to={`/blog${post.fields.slug}`}
+                          to={`${post.fields.slug}`}
                         >
                           Read Post &gt;&gt;
                         </Link>
@@ -95,12 +95,6 @@ class Blog extends React.Component {
 export default Blog
 
 const BlogListContainer = styled.div``
-
-const BloglistBio = styled.div`
-  ${respondTo.xs`
-    display: none;
-  `}
-`
 
 const BlogListHero = styled.div`
   height: 35vh;
@@ -232,7 +226,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(filter: {frontmatter:{type: {eq: "blog"}}} sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
@@ -244,6 +238,7 @@ export const pageQuery = graphql`
             title
             description
             keywords
+            type
           }
         }
       }

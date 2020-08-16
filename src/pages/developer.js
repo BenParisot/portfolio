@@ -6,9 +6,14 @@ import CaseStudy from "./case-study/caseStudy"
 import Footer from "../components/footer"
 import { fadeIn, slideInUp } from 'react-animations'
 import { respondTo } from '../styling/respondTo'
+import { graphql } from 'gatsby'
+
 
 const Developer = (props) => {
+  const data = props.data.allMdx.edges
+  console.log('data', data)
   const title = `Ben Parisot, Full Stack Dev`
+
   const caseStudies = [
     {
       title: "Weather.",
@@ -30,12 +35,13 @@ const Developer = (props) => {
     },
   ]
 
-  const caseStudyList = caseStudies.map(caseStudy => {
+  const caseStudyList = data.map(caseStudy => {
     return (
       <CaseStudy
-        title={caseStudy.title}
-        description={caseStudy.description}
-        imgUrl={caseStudy.imgUrl}
+        title={caseStudy.node.frontmatter.title}
+        linkUrl={caseStudy.node.slug}
+        // description={caseStudy.description}
+        // imgUrl={caseStudy.imgUrl}
       />
     )
   })
@@ -91,3 +97,25 @@ const CaseStudies = styled.div`
   }
 `
 export default Developer
+
+export const pageQuery = graphql`
+query testStudyQuery {
+  site {
+    siteMetadata {
+      title
+      author
+    }
+  }
+  allMdx(filter: {frontmatter:{type: {eq: "study"}}} sort: { fields: [frontmatter___date], order: DESC }) {
+    edges {
+      node {
+        excerpt
+        slug
+        frontmatter {
+          title
+        }
+      }
+    }
+  }
+}
+`
