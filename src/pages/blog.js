@@ -30,7 +30,9 @@ class Blog extends React.Component {
             <p>A blog about creative coding, design, and trying new things.</p>
           </BlogListHero>
           <SEO title="All posts" />
-          <Bio />
+          <BloglistBio>
+            <Bio />
+          </BloglistBio>
           <BlogList>
             {sortedPosts.map(post => {
               const title = post.frontmatter.title || post.fields.slug
@@ -98,6 +100,12 @@ class Blog extends React.Component {
 export default Blog
 
 const BlogListContainer = styled.div``
+
+const BloglistBio = styled.div`
+  ${respondTo.xs`
+    display: none;
+  `}
+`
 
 const BlogListHero = styled.div`
   height: 35vh;

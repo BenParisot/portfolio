@@ -7,13 +7,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import styled from "styled-components"
+import { respondTo } from "../styling/respondTo"
+import Footer from "../components/footer"
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    console.log("post", post)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <BlogPostContainer>
@@ -26,6 +27,7 @@ class BlogPostTemplate extends React.Component {
             description={post.frontmatter.description || post.excerpt}
           />
           <BlogPostArea>
+            <Bio />
             <p
               className="date-tags"
               style={{
@@ -40,9 +42,6 @@ class BlogPostTemplate extends React.Component {
             </p>
             <div className="post-body">
               <MDXRenderer className="post-body">{post.body}</MDXRenderer>
-            </div>
-            <div className="bio">
-              <Bio />
             </div>
             <div className="post-nav">
               <ul
@@ -71,6 +70,7 @@ class BlogPostTemplate extends React.Component {
               </ul>
             </div>
           </BlogPostArea>
+          <Footer />
         </BlogPostContainer>
       </Layout>
     )
@@ -79,11 +79,15 @@ class BlogPostTemplate extends React.Component {
 
 const BlogPostContainer = styled.div`
   display: grid;
+  ${respondTo.xs`
+    display: flex;
+    flex-direction: column;
+  `}
 `
 
 const BlogPostHero = styled.div`
   height: 35vh;
-  background: url('content/assets/woman-computer.jpeg');
+  background: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80");
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
@@ -98,6 +102,12 @@ const BlogPostHero = styled.div`
     padding: 20px;
     background-color: rgba(240, 77, 77, 0.6);
   }
+  ${respondTo.xs`
+    height: 100%;
+    h1 {
+      font-size: 36px;
+    }
+  `}
 `
 
 const BlogPostArea = styled.div`
@@ -113,6 +123,11 @@ const BlogPostArea = styled.div`
     p {
       margin-bottom: 1rem;
     }
+    ${respondTo.xs`
+      text-align: left;
+      padding: 0px;
+      margin-right: 0px;
+    `}
   }
   .post-body {
     grid-column-start: 2;
@@ -135,6 +150,14 @@ const BlogPostArea = styled.div`
     grid-row-start: 1;
     grid-column-start: 3;
   }
+  ${respondTo.xs`
+    display: flex;
+    flex-direction: column;
+    padding: 0px 25px;
+    .post-body {
+      padding: 0px;
+    }
+  `}
 `
 
 export default BlogPostTemplate

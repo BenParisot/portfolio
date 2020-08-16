@@ -1,7 +1,7 @@
 ---
 path: four-pillars-of-a-successful-development-project/
 date: 2019-09-30T02:24:57.315Z
-title: Four Pillars of a Successful Development Project
+title: Pillars of a Successful Dev Project
 description: Or, How I Learned to Stop Worrying and Love a Detailed Meeting Outline
 keywords: [coding, management philosophy, technical project management]
 heroImage: 'content/assets/woman-computer.jpeg'

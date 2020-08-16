@@ -3,7 +3,6 @@ import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
 import { rhythm } from "../utils/typography"
-import { respondTo } from '../styling/respondTo'
 
 function Bio() {
   return (
@@ -62,9 +61,6 @@ const bioQuery = graphql`
 
 const Container = styled.div`
   display: flex;
-  ${respondTo.xs`
-    display: none;
-  `}
 `
 
 export default Bio

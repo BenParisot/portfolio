@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'gatsby'
 import styled from "styled-components"
 import { respondTo } from '../../styling/respondTo'
 
@@ -7,7 +8,8 @@ const CaseStudy = props => {
   return (
     <CaseStudyContainer>
       <Title>
-        <h4>{title}</h4>
+       <Link to="test-case"><h4>{title}</h4>
+       </Link> 
       </Title>
       <Image>
         <img src={imgUrl} alt={title} />

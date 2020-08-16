@@ -62,9 +62,6 @@ const NavMain = styled.nav`
   }
   ${respondTo.xs`
     position: fixed;
-    // display: grid;
-    // grid-template-columns: 20% 20% 20% 20% 20%;
-    // grid-template-rows: 100%;
     display: flex;
     justify-content: space-around;
     max-width: 100vw;
