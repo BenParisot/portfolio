@@ -1,7 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
@@ -30,9 +28,6 @@ class Blog extends React.Component {
             <p>A blog about creative coding, design, and trying new things.</p>
           </BlogListHero>
           <SEO title="All posts" />
-          <BloglistBio>
-            <Bio />
-          </BloglistBio>
           <BlogList>
             {sortedPosts.map(post => {
               const title = post.frontmatter.title || post.fields.slug

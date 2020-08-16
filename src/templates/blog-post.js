@@ -12,7 +12,7 @@ import Footer from "../components/footer"
 
 class BlogPostTemplate extends React.Component {
   render() {
-    console.log('this.props', this.props)
+    console.log("this.props", this.props)
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
@@ -28,7 +28,9 @@ class BlogPostTemplate extends React.Component {
             description={post.frontmatter.description || post.excerpt}
           />
           <BlogPostArea>
-            <Bio />
+            <div className="bio-container">
+              <Bio />
+            </div>
             <p
               className="date-tags"
               style={{
@@ -114,6 +116,10 @@ const BlogPostHero = styled.div`
 const BlogPostArea = styled.div`
   display: grid;
   grid-template-columns: 25% 50% 15%;
+  .bio-container {
+    grid-row: 1;
+    grid-column: 3;
+  }
   .date-tags {
     grid-column-start: 1;
     margin-right: 15%;
