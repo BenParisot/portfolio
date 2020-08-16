@@ -3,6 +3,8 @@ path: robot-haikubot
 date: 2020-08-09T22:06:36.584Z
 title: Robot Haikubot
 description: A Twitter bot that sends a randomly-generated haiku to those that ask for one!
+type: study
+tech: ['Node.js', 'Express', 'MongoDB', 'Heroku']
 ---
 Robot Haikubot will tweet you a randomly-generated haiku when you tweet at it; e.g., “Hey @RobotHaikubot, you up?”
 
