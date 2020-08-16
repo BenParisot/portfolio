@@ -12,6 +12,7 @@ import Footer from "../components/footer"
 
 class BlogPostTemplate extends React.Component {
   render() {
+    console.log('this.props', this.props)
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext

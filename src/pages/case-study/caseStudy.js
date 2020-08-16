@@ -8,7 +8,7 @@ const CaseStudy = props => {
   return (
     <CaseStudyContainer>
       <Title>
-       <Link to="test-case"><h4>{title}</h4>
+       <Link to="test"><h4>{title}</h4>
        </Link> 
       </Title>
       <Image>
