@@ -14,14 +14,14 @@ const CaseStudyDetail = props => {
       <SectionTitle title={study.frontmatter.title} />
       <CaseStudySidebar>
         <h4>Tech</h4>
-        <p>Node.js, Express, React/Redux, MongoDB</p>
+        <p>{study.frontmatter.tech.map(tech => tech)}</p>
         <h4>Timeline</h4>
-        <p>Six working days</p>
+        <p>{study.frontmatter.timeline}</p>
         <h4>Role</h4>
-        <p>Front-end lead, scrummaster</p>
+        <p>{study.frontmatter.role}</p>
       </CaseStudySidebar>
       <CaseStudyBody>
-        <h3>{study.description}</h3>
+        <h3>{study.frontmatter.description}</h3>
         <MDXRenderer>{study.body}</MDXRenderer>
       </CaseStudyBody>
     </CaseStudyDetailContainer>
@@ -59,7 +59,10 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        description
+        tech
+        timeline
+        role
       }
     }
   }
