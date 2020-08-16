@@ -7,7 +7,7 @@ import SectionTitle from "../components/sectionTitle"
 
 const CaseStudyDetail = props => {
   const study = props.data.mdx
-  console.log("props", study)
+  console.log("props", study.frontmatter)
   return (
     <CaseStudyDetailContainer>
       <Nav />
