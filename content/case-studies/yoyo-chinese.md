@@ -6,8 +6,9 @@ description: A mobile-first rebuild of a successful existing Chinese-language
   education web app.
 type: study
 tech: ['React/Redux', 'StyledComponents', 'Node.js', 'Express', 'MongoDB', 'JavaScript']
-timeline: '6 months'
-role: 'Front-End Lead Developer'
+role: Lead Front-End Developer
+timeline: 6 months
+
 ---
 ![woman-at-computer](../assets/woman-computer.jpeg)
 

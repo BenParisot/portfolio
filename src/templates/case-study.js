@@ -21,7 +21,7 @@ const CaseStudyDetail = props => {
         <p>{study.frontmatter.role}</p>
       </CaseStudySidebar>
       <CaseStudyBody>
-        <h3>{study.frontmatter.description}</h3>
+        <blockquote>{study.frontmatter.description}</blockquote>
         <MDXRenderer>{study.body}</MDXRenderer>
       </CaseStudyBody>
     </CaseStudyDetailContainer>
@@ -37,6 +37,9 @@ const CaseStudyDetailContainer = styled.div`
 const CaseStudyBody = styled.div`
   grid-column: 2 / span 4;
   grid-row: 5;
+  img {
+    width: 100%;
+  }
 `
 
 const CaseStudySidebar = styled.aside`
