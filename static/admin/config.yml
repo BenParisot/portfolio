@@ -37,6 +37,8 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: description, label: Description }
+      - { name: type, label: Type }
+      - { name: role, label: Role }
       - { name: body, label: Body, widget: markdown }
 
   - name: producer-study
