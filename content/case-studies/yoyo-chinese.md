@@ -10,8 +10,17 @@ role: Lead Front-End Developer
 timeline: 6 months
 
 ---
-![woman-at-computer](../assets/woman-computer.jpeg)
+
+Intro
 
 lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor 
+
+Client Needs
+
+Proposed Solution
+
+
+
+![woman-at-computer](../assets/woman-computer.jpeg)
 
 lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor

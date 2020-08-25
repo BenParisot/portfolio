@@ -40,7 +40,7 @@ const Developer = (props) => {
       <CaseStudy
         title={caseStudy.node.frontmatter.title}
         linkUrl={caseStudy.node.slug}
-        // description={caseStudy.description}
+        description={caseStudy.node.frontmatter.description}
         // imgUrl={caseStudy.imgUrl}
       />
     )
@@ -113,6 +113,7 @@ query testStudyQuery {
         slug
         frontmatter {
           title
+          description
         }
       }
     }

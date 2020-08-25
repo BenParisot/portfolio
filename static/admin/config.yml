@@ -27,3 +27,25 @@ collections:
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
+
+  - name: design-study
+    label: Design Study
+    folder: content/design-studies
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: body, label: Body, widget: markdown }
+
+  - name: producer-study
+      label: Producer Study
+      folder: content/producer-studies
+      create: true
+      fields:
+        - { name: path, label: Path }
+        - { name: date, label: Date, widget: date }
+        - { name: title, label: Title }
+        - { name: description, label: Description }
+        - { name: body, label: Body, widget: markdown }

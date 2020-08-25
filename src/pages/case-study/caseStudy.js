@@ -5,6 +5,7 @@ import { respondTo } from '../../styling/respondTo'
 
 const CaseStudy = props => {
   const { title, description, imgUrl, linkUrl } = props
+  console.log('props', props)
   return (
     <CaseStudyContainer>
       <Title>
