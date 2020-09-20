@@ -49,7 +49,7 @@ const Title = styled.div`
   h4 {
     text-transform: uppercase;
     margin: 0;
-  }
+  } 
   ${respondTo.xs`
     width: 100%;
     height: 60px;
