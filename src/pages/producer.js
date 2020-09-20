@@ -6,35 +6,19 @@ import CaseStudy from "./case-study/caseStudy"
 import Footer from '../components/footer'
 import { fadeIn, slideInUp } from 'react-animations'
 import { respondTo } from '../styling/respondTo'
+import { graphql } from 'gatsby'
 
-const Producer = () => {
+const Producer = (props) => {
+  const data = props.data.allMdx.edges
+  console.log('data', data)
   const title = `Ben Parisot, Digital Producer`
-  const caseStudies = [
-    {
-      title: "Ben 10: Alien Experience",
-      description:
-        "An immersive level-based AR shooter for iOS and Android; 12-member project team; 1 year development time.",
-      imgUrl: "https://i.ytimg.com/vi/Pp_uCjtuSjE/maxresdefault.jpg",
-    },
-    {
-      title: "Oracle Runner",
-      description:
-        "Touchscreen racing game for Oracle Open World SF and Oracle Headquarters; 8-member project team; 5 month development time.",
-      imgUrl: "https://heliosinteractive.com/wordpress/wp-content/uploads/2018/12/OR_1.jpg",
-    },
-    {
-      title: "Druva Climbing Challenge",
-      description:
-        "Motion-activated climbing simulator; 7-member project team; 4 month development time;",
-      imgUrl: "https://heliosinteractive.com/wordpress/wp-content/uploads/2018/11/Druva_2.jpg",
-    },
-  ]
 
-  const caseStudyList = caseStudies.map(caseStudy => {
+  const caseStudyList = data.map(caseStudy => {
     return (
       <CaseStudy
-        title={caseStudy.title}
-        description={caseStudy.description}
+        title={caseStudy.node.frontmatter.title}
+        description={caseStudy.node.frontmatter.description}
+        linkUrl={caseStudy.node.slug}
         imgUrl={caseStudy.imgUrl}
       />
     )
@@ -68,6 +52,9 @@ const ProducerMain = styled.div`
   padding-bottom: 50px;
   grid-template-columns: 16% 16% 16% 16% auto 16%;
   grid-template-rows: 125px 135px 85px 7% 16%;
+  ${respondTo.xs`
+    grid-template-rows: 125px 135px 75px 6% 16%;
+  `}
 `
 
 const Description = styled.div`
@@ -88,7 +75,30 @@ const CaseStudies = styled.div`
     margin-bottom: 35px;
   }
   ${respondTo.xs`
-    margin-top: 15px;
   `}
 `
 export default Producer
+
+export const pageQuery = graphql`
+query producerStudyQuery {
+  site {
+    siteMetadata {
+      title
+      author
+    }
+  }
+  allMdx(filter: {frontmatter:{type: {eq: "producer-study"}}} sort: { fields: [frontmatter___date], order: DESC }) {
+    edges {
+      node {
+        excerpt
+        slug
+        frontmatter {
+          title
+          description
+        }
+      }
+    }
+  }
+}
+
+`

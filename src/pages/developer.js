@@ -14,26 +14,6 @@ const Developer = (props) => {
   console.log('data', data)
   const title = `Ben Parisot, Full Stack Dev`
 
-  const caseStudies = [
-    {
-      title: "Weather.",
-      description:
-        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
-      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
-    },
-    {
-      title: "Weather.",
-      description:
-        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
-      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
-    },
-    {
-      title: "Weather.",
-      description:
-        "A serverless web app that takes a user-entered United States zip code and draws an interactive 12-hour temperature forecast line graph using the D3 visualization library.",
-      imgUrl: "https://www.benparisot.com/static/media/weather.a1c06284.jpg",
-    },
-  ]
 
   const caseStudyList = data.map(caseStudy => {
     return (
