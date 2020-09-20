@@ -108,6 +108,11 @@ const Background = styled.div`
   grid-template-columns: 50% 50%;
   grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% auto;
 `}
+  ${respondTo.sm` 
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 16.6% 16.6% 16.6% 16.6% auto 16.6%;
+`}
 `
 const BackgroundDivOne = styled.div`
   grid-column-start: 1;
@@ -121,10 +126,13 @@ const BackgroundDivOne = styled.div`
   grid-column: 1 / span 2;
   grid-row: 1;
   transition: .5s;
-  height: 100%;
+  height: 101%;
   width: ${({ state }) =>
     state === "exiting" || state === "exited" ? "0px" : "100%"};
 `}
+  ${respondTo.sm`
+    width: 101%;
+  `}
 `
 const BackgroundDivTwo = styled.div`
   grid-column-start: 2;
@@ -139,9 +147,12 @@ const BackgroundDivTwo = styled.div`
     grid-column: 1 / span 2;
     grid-row: 2;
     transition: .75s;
-    height: 100%;
+    height: 101%;
     width: ${({ state }) =>
     state === "exiting" || state === "exited" ? "0px" : "100%"};
+  `}
+    ${respondTo.sm`
+    width: 101%;
   `}
 `
 
@@ -157,9 +168,12 @@ const BackgroundDivThree = styled.div`
     grid-column: 1 / span 2;
     grid-row: 3;
     transition: 1s;
-    height: 100%;
+    height: 101%;
     width: ${({ state }) =>
     state === "exiting" || state === "exited" ? "0px" : "100%"};
+  `}
+    ${respondTo.sm`
+    width: 101%;
   `}
 `
 
@@ -175,9 +189,12 @@ const BackgroundDivFour = styled.div`
     grid-column: 1 / span 2;
     grid-row: 4;
     transition: 1.25s;
-    height: 100%;
+    height: 101%;
     width: ${({ state }) =>
     state === "exiting" || state === "exited" ? "0px" : "100%"};
+  `}
+    ${respondTo.sm`
+    width: 101%;
   `}
 `
 
@@ -193,9 +210,11 @@ const BackgroundDivFive = styled.div`
     grid-column: 1 / span 2;
     grid-row: 5;
     transition: 1.5s;
-    height: 100%;
+    height: 101%;
     width: ${({ state }) =>
     state === "exiting" || state === "exited" ? "0px" : "100%"};
+  `}
+    ${respondTo.sm`
   `}
 `
 
@@ -211,9 +230,11 @@ const BackgroundDivSix = styled.div`
     grid-column: 1 / span 2;
     grid-row: 6;
     transition: 1.75s;
-    height: 100%;
+    height: 101%;
     width: ${({ state }) =>
     state === "exiting" || state === "exited" ? "0px" : "100%"};
+  `}
+    ${respondTo.sm`
   `}
 `
 
@@ -238,6 +259,12 @@ const Slogan = styled.div`
     h1 {
       font-size: 45px;
     }
+  `}
+    ${respondTo.sm`
+    grid-column: 2 / span 4;
+      h1 {
+        font-size: 6vw;
+      }
   `}
 `
 
@@ -286,6 +313,11 @@ const Dev = styled.div`
       ? "translateY(100rem)"
       : ""};
   `}
+    ${respondTo.sm`
+    h1 {
+      font-size: 9vh;
+    }
+  `}
 `
 
 const Design = styled.div`
@@ -332,6 +364,11 @@ const Design = styled.div`
     state === "exiting" || state === "exited"
       ? "translateY(100rem)"
       : ""};
+  `}
+    ${respondTo.sm`
+        h1 {
+      font-size: 9vh;
+    }
   `}
 `
 const DevelopH1 = styled.h1``
@@ -383,6 +420,11 @@ const Production = styled.div`
       ? "translateY(100rem)"
       : ""};
   `}
+    ${respondTo.sm`
+        h1 {
+      font-size: 9vh;
+    }
+  `}
 `
 
 const Nav = styled.ul`
@@ -405,6 +447,18 @@ const Nav = styled.ul`
   ${respondTo.xs`
     display: none;
   `}
+    ${respondTo.sm`
+    width: 80%;
+    grid-column-start: 4;
+    grid-row-start: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    li {
+      font-size: 2vh;
+    }
+  `}
 `
 const NavP = styled.p`
   width: 35%;
@@ -414,5 +468,8 @@ const NavP = styled.p`
   :hover {
     cursor: pointer;
   }
+  ${respondTo.sm`
+    width: 100%;
+  `}
 `
 export default Landing
