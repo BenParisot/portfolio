@@ -9,10 +9,7 @@ const CaseStudy = props => {
   return (
     <CaseStudyContainer>
       <Title>
-      <Link
-        // className="post-link"
-        to={`/${linkUrl}`}
-                        >
+      <Link to={`/${linkUrl}`}>
         {title}
       </Link>
       </Title>
@@ -21,7 +18,9 @@ const CaseStudy = props => {
       </Image>
       <Description>
         <p>{description}</p>
-        <a target="blank" href="google.com">Learn More</a>
+        <Link to={`/${linkUrl}`}>
+        Learn More
+      </Link>
       </Description>
     </CaseStudyContainer>
   )

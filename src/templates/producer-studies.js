@@ -7,6 +7,7 @@ import Nav from "../components/nav"
 import SectionTitle from "../components/sectionTitle"
 
 const ProducerStudyDetail = props => {
+  console.log('component mounts')
   const study = props.data.mdx
   console.log("props", study.frontmatter)
   return (
@@ -15,8 +16,6 @@ const ProducerStudyDetail = props => {
       <SectionTitle title={study.frontmatter.title} />
       <blockquote>{study.frontmatter.description}</blockquote>
       <CaseStudySidebar>
-        <h4>Tech</h4>
-        <p>{study.frontmatter.tech.map(tech => ` ${tech},`)}</p>
         <h4>Timeline</h4>
         <p>{study.frontmatter.timeline}</p>
         <h4>Role</h4>
@@ -45,6 +44,9 @@ const ProducerStudyDetailContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    h1 {
+      text-align: center;
+    }
   `}
 `
 

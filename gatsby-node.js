@@ -5,6 +5,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const caseStudy = path.resolve(`./src/templates/case-study.js`)
+  const producerStudy = path.resolve(`./src/templates/producer-studies.js`)
   return graphql(
     `
       {
@@ -53,6 +54,17 @@ exports.createPages = ({ graphql, actions }) => {
         createPage({
           path: `${post.node.fields.slug}`,
           component: caseStudy,
+          context: {
+            slug: post.node.fields.slug,
+            previous,
+            next,
+          },
+        })
+      }
+      if (post.node.frontmatter.type === 'producer-study') {
+        createPage({
+          path: `${post.node.fields.slug}`,
+          component: producerStudy,
           context: {
             slug: post.node.fields.slug,
             previous,
