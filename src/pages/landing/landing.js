@@ -102,16 +102,15 @@ const Background = styled.div`
   grid-template-rows: 16% 16% auto 16% 16% 16%;
   width: 100vw;
   height: 100vh;
-
-  ${respondTo.xs` 
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% auto;
-`}
   ${respondTo.sm` 
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 16.6% 16.6% 16.6% 16.6% auto 16.6%;
+`}
+  ${respondTo.xs` 
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% auto;
 `}
 `
 const BackgroundDivOne = styled.div`
@@ -122,6 +121,9 @@ const BackgroundDivOne = styled.div`
   transition: 0.25s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
+  ${respondTo.sm`
+    width: 101%;
+  `}
   ${respondTo.xs` 
   grid-column: 1 / span 2;
   grid-row: 1;
@@ -130,9 +132,6 @@ const BackgroundDivOne = styled.div`
   width: ${({ state }) =>
     state === "exiting" || state === "exited" ? "0px" : "100%"};
 `}
-  ${respondTo.sm`
-    width: 101%;
-  `}
 `
 const BackgroundDivTwo = styled.div`
   grid-column-start: 2;
@@ -142,17 +141,16 @@ const BackgroundDivTwo = styled.div`
   transition: 0.5s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
-
+  ${respondTo.sm`
+    width: 101%;
+  `}
   ${respondTo.xs` 
     grid-column: 1 / span 2;
     grid-row: 2;
     transition: .75s;
     height: 101%;
     width: ${({ state }) =>
-    state === "exiting" || state === "exited" ? "0px" : "100%"};
-  `}
-    ${respondTo.sm`
-    width: 101%;
+      state === "exiting" || state === "exited" ? "0px" : "100%"};
   `}
 `
 
@@ -164,16 +162,16 @@ const BackgroundDivThree = styled.div`
   transition: 0.75s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
+  ${respondTo.sm`
+    width: 101%;
+  `}
   ${respondTo.xs` 
     grid-column: 1 / span 2;
     grid-row: 3;
     transition: 1s;
     height: 101%;
     width: ${({ state }) =>
-    state === "exiting" || state === "exited" ? "0px" : "100%"};
-  `}
-    ${respondTo.sm`
-    width: 101%;
+      state === "exiting" || state === "exited" ? "0px" : "100%"};
   `}
 `
 
@@ -185,16 +183,16 @@ const BackgroundDivFour = styled.div`
   transition: 1s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
+  ${respondTo.sm`
+    width: 101%;
+  `}
   ${respondTo.xs` 
     grid-column: 1 / span 2;
     grid-row: 4;
     transition: 1.25s;
     height: 101%;
     width: ${({ state }) =>
-    state === "exiting" || state === "exited" ? "0px" : "100%"};
-  `}
-    ${respondTo.sm`
-    width: 101%;
+      state === "exiting" || state === "exited" ? "0px" : "100%"};
   `}
 `
 
@@ -206,15 +204,16 @@ const BackgroundDivFive = styled.div`
   transition: 1.25s;
   height: ${({ state }) =>
     state === "exiting" || state === "exited" ? "42px" : "100%"};
+  ${respondTo.sm`
+    width: 101%;
+  `}
   ${respondTo.xs` 
     grid-column: 1 / span 2;
     grid-row: 5;
     transition: 1.5s;
     height: 101%;
     width: ${({ state }) =>
-    state === "exiting" || state === "exited" ? "0px" : "100%"};
-  `}
-    ${respondTo.sm`
+      state === "exiting" || state === "exited" ? "0px" : "100%"};
   `}
 `
 
@@ -232,9 +231,7 @@ const BackgroundDivSix = styled.div`
     transition: 1.75s;
     height: 101%;
     width: ${({ state }) =>
-    state === "exiting" || state === "exited" ? "0px" : "100%"};
-  `}
-    ${respondTo.sm`
+      state === "exiting" || state === "exited" ? "0px" : "100%"};
   `}
 `
 
@@ -252,6 +249,12 @@ const Slogan = styled.div`
   transition: 2s;
   transform: ${({ state }) =>
     state === "exiting" || state === "exited" ? "translateX(100rem)" : ""};
+  ${respondTo.sm`
+    grid-column: 2 / span 4;
+      h1 {
+        font-size: 6vw;
+      }
+  `}
   ${respondTo.xs`
     margin-left: 10%;
     grid-column: 1 / span 2;
@@ -259,12 +262,6 @@ const Slogan = styled.div`
     h1 {
       font-size: 45px;
     }
-  `}
-    ${respondTo.sm`
-    grid-column: 2 / span 4;
-      h1 {
-        font-size: 6vw;
-      }
   `}
 `
 
@@ -292,6 +289,11 @@ const Dev = styled.div`
     state === "exiting" || state === "exited"
       ? "translateY(100rem) rotate(180deg)"
       : ""};
+  ${respondTo.sm`
+    h1 {
+      font-size: 9vh;
+    }
+  `}
   ${respondTo.xs`
     display: flex;
     align-items: center;
@@ -309,14 +311,7 @@ const Dev = styled.div`
     }
     transition: 2s;
     transform: ${({ state }) =>
-    state === "exiting" || state === "exited"
-      ? "translateY(100rem)"
-      : ""};
-  `}
-    ${respondTo.sm`
-    h1 {
-      font-size: 9vh;
-    }
+      state === "exiting" || state === "exited" ? "translateY(100rem)" : ""};
   `}
 `
 
@@ -344,6 +339,11 @@ const Design = styled.div`
     state === "exiting" || state === "exited"
       ? "translateY(100rem) rotate(180deg)"
       : ""};
+  ${respondTo.sm`
+        h1 {
+      font-size: 9vh;
+    }
+  `}
   ${respondTo.xs`
     display: flex;
     align-items: center;
@@ -361,14 +361,7 @@ const Design = styled.div`
     }
     transition: 2s;
     transform: ${({ state }) =>
-    state === "exiting" || state === "exited"
-      ? "translateY(100rem)"
-      : ""};
-  `}
-    ${respondTo.sm`
-        h1 {
-      font-size: 9vh;
-    }
+      state === "exiting" || state === "exited" ? "translateY(100rem)" : ""};
   `}
 `
 const DevelopH1 = styled.h1``
@@ -399,6 +392,11 @@ const Production = styled.div`
     state === "exiting" || state === "exited"
       ? "translateY(100rem) rotate(180deg)"
       : ""};
+  ${respondTo.sm`
+      h1 {
+      font-size: 9vh;
+    }
+  `}
   ${respondTo.xs`
     display: flex;
     align-items: center;
@@ -416,14 +414,7 @@ const Production = styled.div`
     }
     transition: 2s;
     transform: ${({ state }) =>
-    state === "exiting" || state === "exited"
-      ? "translateY(100rem)"
-      : ""};
-  `}
-    ${respondTo.sm`
-        h1 {
-      font-size: 9vh;
-    }
+      state === "exiting" || state === "exited" ? "translateY(100rem)" : ""};
   `}
 `
 
@@ -443,11 +434,7 @@ const Nav = styled.ul`
   transition: 2s;
   opacity: ${({ state }) =>
     state === "exiting" || state === "exited" ? 0 : 100};
-
-  ${respondTo.xs`
-    display: none;
-  `}
-    ${respondTo.sm`
+  ${respondTo.sm`
     width: 80%;
     grid-column-start: 4;
     grid-row-start: 6;
@@ -458,6 +445,9 @@ const Nav = styled.ul`
     li {
       font-size: 2vh;
     }
+  `}
+  ${respondTo.xs`
+    display: none;
   `}
 `
 const NavP = styled.p`
