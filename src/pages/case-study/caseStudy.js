@@ -19,7 +19,7 @@ const CaseStudy = props => {
       <Description>
         <p>{description}</p>
         <Link to={`/${linkUrl}`}>
-        Learn More
+        Learn More >>
       </Link>
       </Description>
     </CaseStudyContainer>
@@ -30,6 +30,15 @@ const CaseStudyContainer = styled.div`
   display: grid;
   grid-template-columns: 10% 30% 5% 55%;
   grid-template-rows: 10% 15% 10% 65%;
+  a {
+    font-family: Montserrat,sans-serif;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+    color: white;
+    text-decoration: none;
+    box-shadow: none;
+    text-transform: uppercase;
+  }
   ${respondTo.xs`
     display: flex;
     flex-direction: column;
@@ -42,9 +51,10 @@ const Title = styled.div`
   display: flex;
   align-items: center;
   width: 50%;
-  height: 10vh;
+  height: 100px;
   background-color: #ed4b64;
-  padding-left: 35px;
+  padding: 10px 30px 10px 35px;
+  /* padding-left: 35px; */
   h4 {
     text-transform: uppercase;
     margin: 0;
@@ -62,6 +72,7 @@ const Description = styled.div`
   a {
     margin-left: 20%;
     text-transform: uppercase;
+    color: red;
   }
   ${respondTo.xs`
     a {
